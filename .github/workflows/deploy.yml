@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ] # Chạy mỗi khi push vào nhánh main
+
+jobs:
+  # --- Job 1: Build và Push Image lên Docker Hub ---
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          # Thay 'hoangdonguit' nếu username Docker Hub của bạn khác
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-cicd-aws:latest
+
+  # --- Job 2: Ra lệnh cho EC2 Deploy ---
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-push # Đợi build xong mới deploy
+    steps:
+      - name: Executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            # Chạy file script mà bạn đã tạo ở Bước 3.3 trên EC2
+            bash ~/scripts/deploy.sh

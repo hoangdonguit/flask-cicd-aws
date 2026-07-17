@@ -1,0 +1,126 @@
+name: Image Supply Chain
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: image-supply-chain-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-scan-publish:
+    name: Build, Scan and Publish Image
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Prepare image metadata
+        id: metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          short_sha="${GITHUB_SHA::7}"
+          image_tag="sha-${short_sha}"
+
+          echo "image_tag=${image_tag}" >> "$GITHUB_OUTPUT"
+          echo "local_image=flask-cicd-aws:scan" >> "$GITHUB_OUTPUT"
+
+          echo "Image tag: ${image_tag}"
+
+      - name: Build image for security verification
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          docker build \
+            --pull \
+            --tag "${{ steps.metadata.outputs.local_image }}" \
+            .
+
+          docker image inspect \
+            "${{ steps.metadata.outputs.local_image }}" \
+            --format 'image_id={{.Id}} user={{.Config.User}}'
+
+      - name: Scan image with Trivy
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+        with:
+          scan-type: image
+          image-ref: ${{ steps.metadata.outputs.local_image }}
+          format: table
+          exit-code: "1"
+          ignore-unfixed: true
+          vuln-type: os,library
+          severity: HIGH,CRITICAL
+
+      - name: Log in to Docker Hub
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          test -n "$DOCKERHUB_USERNAME"
+          test -n "$DOCKERHUB_TOKEN"
+
+          printf '%s' "$DOCKERHUB_TOKEN" |
+            docker login \
+              --username "$DOCKERHUB_USERNAME" \
+              --password-stdin
+
+      - name: Tag and push verified image
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          IMAGE_TAG: ${{ steps.metadata.outputs.image_tag }}
+          LOCAL_IMAGE: ${{ steps.metadata.outputs.local_image }}
+        run: |
+          set -euo pipefail
+
+          image_repository="${DOCKERHUB_USERNAME}/flask-cicd-aws"
+          immutable_image="${image_repository}:${IMAGE_TAG}"
+          latest_image="${image_repository}:latest"
+
+          docker tag "$LOCAL_IMAGE" "$immutable_image"
+          docker tag "$LOCAL_IMAGE" "$latest_image"
+
+          docker push "$immutable_image"
+          docker push "$latest_image"
+
+          {
+            echo "## Published Docker image"
+            echo
+            echo "- Immutable tag: \`$immutable_image\`"
+            echo "- Convenience tag: \`$latest_image\`"
+            echo "- Source commit: \`$GITHUB_SHA\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify published immutable image
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          IMAGE_TAG: ${{ steps.metadata.outputs.image_tag }}
+        run: |
+          set -euo pipefail
+
+          immutable_image="${DOCKERHUB_USERNAME}/flask-cicd-aws:${IMAGE_TAG}"
+
+          docker buildx imagetools inspect "$immutable_image"
+
+          echo "Verified remote image: $immutable_image"

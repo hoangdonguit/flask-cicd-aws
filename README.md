@@ -2,7 +2,7 @@
 
 A production-oriented DevOps portfolio lab for building, scanning, publishing and deploying a containerized Flask application to an ephemeral AWS EC2 environment.
 
-> **Current status:** Phase 2 is complete: automated tests and CI quality gates are active. Image scanning and publishing, Terraform, and AWS deployment remain under development.
+> **Current status:** Phase 3 is complete: the application is tested, security-scanned, and published to Docker Hub with immutable Git SHA tags. Terraform and AWS deployment remain under development.
 
 ## Recruiter Summary
 
@@ -307,6 +307,7 @@ Current evidence:
 
 - [Phase 1 — Local application and container hardening](docs/evidence/phase1-local-application-and-container.md)
 - [Phase 2 — Automated tests and CI quality gates](docs/evidence/phase2-ci-quality-gates.md)
+- [Phase 3 — Secure Docker image supply chain](docs/evidence/phase3-image-supply-chain.md)
 
 Portfolio screenshots will be stored under:
 
@@ -327,14 +328,33 @@ Portfolio screenshots will be stored under:
 - [x] Add Ruff and test configuration
 - [x] Replace the original auto-deployment workflow
 - [x] Add GitHub Actions CI quality gates
-- [ ] Add Trivy image scanning
-- [ ] Publish immutable `sha-<short-sha>` image tags
+- [x] Add Trivy image scanning
+- [x] Publish immutable `sha-<short-sha>` image tags
 - [ ] Provision AWS EC2 with Terraform
 - [ ] Add repository-managed deployment scripts
 - [ ] Add a manual GitHub Actions deployment workflow
 - [ ] Verify deployment health remotely
 - [ ] Demonstrate rollback using an older image tag
 - [ ] Capture final portfolio screenshots
+
+## Image Supply Chain
+
+The `Image Supply Chain` workflow builds and scans Docker images for pull requests.
+
+After code is merged into `main`, the same workflow:
+
+- authenticates to Docker Hub;
+- publishes an immutable `sha-<short-sha>` tag;
+- updates the convenience `latest` tag;
+- verifies the immutable image exists remotely.
+
+Deployment and rollback will use immutable SHA tags instead of `latest`.
+
+Documentation-only changes do not trigger image publication because the workflow is restricted to application, dependency, Docker, and supply-chain workflow changes.
+
+Current published verification tag:
+
+    hoangdonguit/flask-cicd-aws:sha-5edfc15
 
 ## Planned GitHub Actions Secrets
 

@@ -48,6 +48,6 @@ Sensitive or temporary local evidence must remain outside Git or in an ignored l
 
 - [x] Phase 1: Local application and container hardening
 - [x] Phase 2: Automated tests and CI quality gates
-- [ ] Phase 3: Docker Hub publishing and image scanning
+- [x] Phase 3: Docker Hub publishing and image scanning
 - [ ] Phase 4: Terraform and AWS EC2 provisioning
 - [ ] Phase 5: Deployment, health verification and rollback

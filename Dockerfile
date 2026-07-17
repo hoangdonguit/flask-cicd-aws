@@ -1,23 +1,41 @@
-# 1. Dùng bản Python nhẹ chuẩn production
 FROM python:3.12-slim
 
-# 2. Tạo user mới để chạy app (không dùng root để tránh bị hack server)
-RUN useradd -m -u 1000 appuser
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+RUN groupadd --gid 10001 appgroup \
+    && useradd \
+        --uid 10001 \
+        --gid appgroup \
+        --create-home \
+        --shell /usr/sbin/nologin \
+        appuser
+
 WORKDIR /app
 
-# 3. Copy file danh sách thư viện và cài đặt
-# Copy riêng file này trước để Docker cache lại, lần sau build sẽ cực nhanh
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
 
-# 4. Copy toàn bộ mã nguồn vào container
-COPY app.py .
+RUN python -m pip install --no-cache-dir --upgrade pip \
+    && python -m pip install --no-cache-dir -r requirements.txt
 
-# 5. Chuyển sang dùng user vừa tạo
-USER appuser
+COPY --chown=appuser:appgroup app.py .
 
-# 6. Báo cho Docker biết app chạy cổng 5000
+USER 10001:10001
+
 EXPOSE 5000
 
-# 7. Lệnh khởi chạy ứng dụng
-CMD ["python", "app.py"]
+HEALTHCHECK --interval=30s \
+    --timeout=3s \
+    --start-period=10s \
+    --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health', timeout=2)" || exit 1
+
+CMD ["gunicorn", \
+     "--bind=0.0.0.0:5000", \
+     "--workers=2", \
+     "--threads=2", \
+     "--timeout=30", \
+     "--access-logfile=-", \
+     "--error-logfile=-", \
+     "app:app"]

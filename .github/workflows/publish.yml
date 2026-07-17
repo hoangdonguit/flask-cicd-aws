@@ -4,9 +4,21 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - "app.py"
+      - "Dockerfile"
+      - "requirements.txt"
+      - ".dockerignore"
+      - ".github/workflows/publish.yml"
   push:
     branches:
       - main
+    paths:
+      - "app.py"
+      - "Dockerfile"
+      - "requirements.txt"
+      - ".dockerignore"
+      - ".github/workflows/publish.yml"
   workflow_dispatch:
 
 permissions:

@@ -191,6 +191,7 @@ The workflow implements the following controls:
 - the scanned local image is tagged and pushed without rebuilding;
 - the Trivy Action is pinned to a full commit SHA;
 - official artifacts receive immutable Git SHA tags;
+- path filters prevent documentation-only changes from publishing unchanged application images;
 - remote artifact existence is verified after publication;
 - the published artifact is pulled and executed as an additional verification step;
 - runtime remains non-root.

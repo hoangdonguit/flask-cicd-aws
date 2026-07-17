@@ -350,6 +350,8 @@ After code is merged into `main`, the same workflow:
 
 Deployment and rollback will use immutable SHA tags instead of `latest`.
 
+Documentation-only changes do not trigger image publication because the workflow is restricted to application, dependency, Docker, and supply-chain workflow changes.
+
 Current published verification tag:
 
     hoangdonguit/flask-cicd-aws:sha-5edfc15

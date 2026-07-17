@@ -2,7 +2,7 @@
 
 A production-oriented DevOps portfolio lab for building, scanning, publishing and deploying a containerized Flask application to an ephemeral AWS EC2 environment.
 
-> **Current status:** Phase 1 local application and container hardening has been completed. Automated CI, image publishing, Terraform and AWS deployment remain under active development.
+> **Current status:** Phase 2 is complete: automated tests and CI quality gates are active. Image scanning and publishing, Terraform, and AWS deployment remain under development.
 
 ## Recruiter Summary
 
@@ -95,6 +95,22 @@ Phase 1 currently provides:
 - non-root Docker execution;
 - Docker health checking;
 - sensitive-file ignore controls.
+
+## CI Quality Gates
+
+The repository now includes an automated GitHub Actions workflow that verifies:
+
+- Ruff linting;
+- Ruff formatting;
+- six Pytest application tests;
+- runtime dependency auditing with pip-audit;
+- Docker image building;
+- container endpoint smoke tests;
+- non-root runtime identity.
+
+The workflow runs on pushes, pull requests targeting `main`, and manual dispatch.
+
+Deployment is intentionally kept separate from CI so that validation does not depend on an active AWS Academy EC2 instance.
 
 ## Application Endpoints
 
@@ -290,6 +306,7 @@ Engineering evidence is stored under:
 Current evidence:
 
 - [Phase 1 — Local application and container hardening](docs/evidence/phase1-local-application-and-container.md)
+- [Phase 2 — Automated tests and CI quality gates](docs/evidence/phase2-ci-quality-gates.md)
 
 Portfolio screenshots will be stored under:
 
@@ -306,10 +323,10 @@ Portfolio screenshots will be stored under:
 - [x] Run the container as a non-root user
 - [x] Add a Docker health check
 - [x] Record Phase 1 evidence
-- [ ] Add automated Pytest coverage
-- [ ] Add Ruff and test configuration
-- [ ] Replace the original auto-deployment workflow
-- [ ] Add GitHub Actions CI quality gates
+- [x] Add automated Pytest coverage
+- [x] Add Ruff and test configuration
+- [x] Replace the original auto-deployment workflow
+- [x] Add GitHub Actions CI quality gates
 - [ ] Add Trivy image scanning
 - [ ] Publish immutable `sha-<short-sha>` image tags
 - [ ] Provision AWS EC2 with Terraform

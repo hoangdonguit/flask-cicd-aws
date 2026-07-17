@@ -1,28 +1,70 @@
-from flask import Flask, jsonify
+import os
 import socket
 
-app = Flask(__name__)
+from flask import Flask, jsonify
 
-@app.route("/")
-def home():
-    return f"""
-    <html>
-    <head><title>Flask CI/CD Demo</title></head>
-    <body style="font-family: sans-serif; max-width: 600px; margin: 60px auto; padding: 20px; background-color: #f4f4f9;">
-        <h1 style="color: #2c3e50;">Chào Đồng, Flask đã chạy!</h1>
-        <p>Dự án này được deploy tự động qua: <b>GitHub Actions → Docker Hub → AWS EC2</b></p>
-        <hr>
-        <p><strong>Hostname (ID Container):</strong> {socket.gethostname()}</p>
-        <p><strong>Phiên bản:</strong> 1.0.0</p>
-    </body>
-    </html>
-    """
+APP_NAME = "flask-cicd-aws"
 
-@app.route("/health")
-def health():
-    # Endpoint này dùng để kiểm tra app có sống hay không
-    return jsonify({"status": "ok", "version": "1.0.0", "message": "I am healthy!"})
+
+def get_runtime_metadata() -> dict[str, str]:
+    image_tag = os.getenv("IMAGE_TAG", "dev")
+    app_version = os.getenv("APP_VERSION", image_tag)
+
+    return {
+        "app": APP_NAME,
+        "version": app_version,
+        "image_tag": image_tag,
+        "environment": os.getenv("DEPLOY_ENV", "local"),
+        "hostname": socket.gethostname(),
+        "deploy_time": os.getenv("DEPLOY_TIME", "unknown"),
+    }
+
+
+def create_app() -> Flask:
+    app = Flask(__name__)
+
+    @app.get("/")
+    def home():
+        metadata = get_runtime_metadata()
+        return jsonify(
+            {
+                **metadata,
+                "status": "running",
+            }
+        )
+
+    @app.get("/health")
+    def health():
+        metadata = get_runtime_metadata()
+        return jsonify(
+            {
+                "app": metadata["app"],
+                "status": "ok",
+                "version": metadata["version"],
+            }
+        )
+
+    @app.get("/version")
+    def version():
+        metadata = get_runtime_metadata()
+        return jsonify(
+            {
+                "app": metadata["app"],
+                "version": metadata["version"],
+                "image_tag": metadata["image_tag"],
+            }
+        )
+
+    @app.get("/metadata")
+    def metadata():
+        return jsonify(get_runtime_metadata())
+
+    return app
+
+
+app = create_app()
+
 
 if __name__ == "__main__":
-    # Chạy trên mọi IP (0.0.0.0) và cổng 5000
-    app.run(host="0.0.0.0", port=5000)
+    port = int(os.getenv("PORT", "5000"))
+    app.run(host="0.0.0.0", port=port)

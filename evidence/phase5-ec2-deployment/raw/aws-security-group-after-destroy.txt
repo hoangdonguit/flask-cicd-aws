@@ -1,0 +1,2 @@
+
+aws: [ERROR]: An error occurred (InvalidGroup.NotFound) when calling the DescribeSecurityGroups operation: The security group 'sg-04a393a42ca947d5e' does not exist

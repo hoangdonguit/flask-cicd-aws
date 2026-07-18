@@ -1,0 +1,14 @@
+aws_instance.app: Destroying... [id=i-0df673da1758aaca4]
+aws_instance.app: Still destroying... [id=i-0df673da1758aaca4, 00m10s elapsed]
+aws_instance.app: Still destroying... [id=i-0df673da1758aaca4, 00m20s elapsed]
+aws_instance.app: Still destroying... [id=i-0df673da1758aaca4, 00m30s elapsed]
+aws_instance.app: Still destroying... [id=i-0df673da1758aaca4, 00m40s elapsed]
+aws_instance.app: Still destroying... [id=i-0df673da1758aaca4, 00m50s elapsed]
+aws_instance.app: Still destroying... [id=i-0df673da1758aaca4, 01m00s elapsed]
+aws_instance.app: Still destroying... [id=i-0df673da1758aaca4, 01m10s elapsed]
+aws_instance.app: Still destroying... [id=i-0df673da1758aaca4, 01m20s elapsed]
+aws_instance.app: Destruction complete after 1m24s
+aws_security_group.app: Destroying... [id=sg-04a393a42ca947d5e]
+aws_security_group.app: Destruction complete after 1s
+
+Apply complete! Resources: 0 added, 0 changed, 2 destroyed.

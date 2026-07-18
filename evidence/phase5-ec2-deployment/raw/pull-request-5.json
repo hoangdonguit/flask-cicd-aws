@@ -1,0 +1,1 @@
+{"baseRefName":"main","headRefName":"feature/phase5-ec2-deployment","mergeCommit":{"oid":"e390452615379af3390a46600eee3de738f60aff"},"mergedAt":"2026-07-18T14:31:53Z","number":5,"state":"MERGED","title":"feat: deploy and rollback EC2 through AWS SSM","url":"https://github.com/hoangdonguit/flask-cicd-aws/pull/5"}

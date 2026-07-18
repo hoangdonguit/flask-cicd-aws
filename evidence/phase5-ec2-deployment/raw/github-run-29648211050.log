@@ -1,0 +1,628 @@
+Build, Scan and Publish Image	Set up job	﻿2026-07-18T14:31:59.1247623Z Current runner version: '2.335.1'
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1273712Z ##[group]Runner Image Provisioner
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1274729Z Hosted Compute Agent
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1275340Z Version: 20260707.563
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1276405Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1277421Z Build Date: 2026-07-07T19:33:50Z
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1278163Z Worker ID: {068a0d1e-793c-4dae-a633-a5eac8ba67f4}
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1278946Z Azure Region: westus3
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1279566Z ##[endgroup]
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1281179Z ##[group]Operating System
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1281863Z Ubuntu
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1282430Z 24.04.4
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1283002Z LTS
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1283525Z ##[endgroup]
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1284073Z ##[group]Runner Image
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1284740Z Image: ubuntu-24.04
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1285386Z Version: 20260714.240.1
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1286531Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260714.240/images/ubuntu/Ubuntu2404-Readme.md
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1288484Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260714.240
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1289617Z ##[endgroup]
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1290725Z ##[group]GITHUB_TOKEN Permissions
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1292760Z Contents: read
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1293402Z Metadata: read
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1294056Z ##[endgroup]
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1296156Z Secret source: Actions
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1297193Z Prepare workflow directory
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1710689Z Prepare all required actions
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.1749177Z Getting action download info
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.4612155Z Download action repository 'actions/checkout@v7' (SHA:9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0)
+Build, Scan and Publish Image	Set up job	2026-07-18T14:31:59.8076463Z Download action repository 'aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25' (SHA:ed142fd0673e97e23eac54620cfb913e5ce36c25)
+Build, Scan and Publish Image	Set up job	2026-07-18T14:32:00.4872511Z Getting action download info
+Build, Scan and Publish Image	Set up job	2026-07-18T14:32:00.6032948Z Download action repository 'aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514' (SHA:3fb12ec12f41e471780db15c232d5dd185dcb514)
+Build, Scan and Publish Image	Set up job	2026-07-18T14:32:00.8384842Z Download action repository 'actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae' (SHA:27d5ce7f107fe9357f9df03efb73ab90386fccae)
+Build, Scan and Publish Image	Set up job	2026-07-18T14:32:00.9978555Z Getting action download info
+Build, Scan and Publish Image	Set up job	2026-07-18T14:32:01.1158541Z Download action repository 'actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb' (SHA:9255dc7a253b0ccc959486e2bca901246202afeb)
+Build, Scan and Publish Image	Set up job	2026-07-18T14:32:01.2687613Z Download action repository 'actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+Build, Scan and Publish Image	Set up job	2026-07-18T14:32:01.4552929Z Complete job name: Build, Scan and Publish Image
+Build, Scan and Publish Image	Check out repository	﻿2026-07-18T14:32:01.5563329Z ##[group]Run actions/checkout@v7
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5564815Z with:
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5565861Z   repository: ***/flask-cicd-aws
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5574199Z   token: ***
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5575071Z   ssh-strict: true
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5575966Z   ssh-user: git
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5577023Z   persist-credentials: true
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5578053Z   clean: true
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5578984Z   sparse-checkout-cone-mode: true
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5580067Z   fetch-depth: 1
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5580961Z   fetch-tags: false
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5581880Z   show-progress: true
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5582799Z   lfs: false
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5583654Z   submodules: false
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5584586Z   set-safe-directory: true
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5585625Z   allow-unsafe-pr-checkout: false
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.5587227Z ##[endgroup]
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6715401Z Syncing repository: ***/flask-cicd-aws
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6718819Z ##[group]Getting Git version info
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6720525Z Working directory is '/home/runner/work/flask-cicd-aws/flask-cicd-aws'
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6722934Z [command]/usr/bin/git version
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6779310Z git version 2.54.0
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6810485Z ##[endgroup]
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6830147Z Temporarily overriding HOME='/home/runner/work/_temp/82340f25-6b2a-4634-a4ef-a9adcc45e3ff' before making global git config changes
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6836128Z Adding repository directory to the temporary git global config as a safe directory
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6841247Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flask-cicd-aws/flask-cicd-aws
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6908920Z Deleting the contents of '/home/runner/work/flask-cicd-aws/flask-cicd-aws'
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6914933Z ##[group]Determining repository object format
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6918947Z ##[endgroup]
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6921777Z ##[group]Initializing the repository
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.6924650Z [command]/usr/bin/git init /home/runner/work/flask-cicd-aws/flask-cicd-aws
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7040607Z hint: Using 'master' as the name for the initial branch. This default branch name
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7044010Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7047454Z hint: to use in all of your new repositories, which will suppress this warning,
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7050088Z hint: call:
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7051476Z hint:
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7053347Z hint: 	git config --global init.defaultBranch <name>
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7055486Z hint:
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7057703Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7060993Z hint: 'development'. The just-created branch can be renamed via this command:
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7063605Z hint:
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7065166Z hint: 	git branch -m <name>
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7067854Z hint:
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7069998Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7073933Z Initialized empty Git repository in /home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7078305Z [command]/usr/bin/git remote add origin https://github.com/***/flask-cicd-aws
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7124175Z ##[endgroup]
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7127395Z ##[group]Disabling automatic garbage collection
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7129821Z [command]/usr/bin/git config --local gc.auto 0
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7178928Z ##[endgroup]
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7182897Z ##[group]Setting up auth
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7185143Z Removing SSH command configuration
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7188393Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7228594Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7628508Z Removing HTTP extra header
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7634892Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7678280Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7910876Z Removing includeIf entries pointing to credentials config files
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7915493Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.7953493Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.8189726Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.8239139Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git.path /home/runner/work/_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.8273116Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.8311487Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.8345203Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.8375100Z ##[endgroup]
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.8376577Z ##[group]Fetching the repository
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:01.8382203Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e390452615379af3390a46600eee3de738f60aff:refs/remotes/origin/main
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2754604Z From https://github.com/***/flask-cicd-aws
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2756365Z  * [new ref]         e390452615379af3390a46600eee3de738f60aff -> origin/main
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2799239Z [command]/usr/bin/git branch --list --remote origin/main
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2834647Z   origin/main
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2845372Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2873688Z e390452615379af3390a46600eee3de738f60aff
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2880199Z ##[endgroup]
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2882632Z ##[group]Determining the checkout info
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2885567Z ##[endgroup]
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2887745Z [command]/usr/bin/git sparse-checkout disable
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2938379Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2972379Z ##[group]Checking out the ref
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.2976659Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.3055716Z Switched to a new branch 'main'
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.3059302Z branch 'main' set up to track 'origin/main'.
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.3066684Z ##[endgroup]
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.3115869Z [command]/usr/bin/git log -1 --format=%H
+Build, Scan and Publish Image	Check out repository	2026-07-18T14:32:02.3147501Z e390452615379af3390a46600eee3de738f60aff
+Build, Scan and Publish Image	Prepare image metadata	﻿2026-07-18T14:32:02.3383165Z ##[group]Run set -euo pipefail
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3384327Z ^[[36;1mset -euo pipefail^[[0m
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3385287Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3386121Z ^[[36;1mshort_sha="${GITHUB_SHA::7}"^[[0m
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3387564Z ^[[36;1mimage_tag="sha-${short_sha}"^[[0m
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3388600Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3389571Z ^[[36;1mecho "image_tag=${image_tag}" >> "$GITHUB_OUTPUT"^[[0m
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3391081Z ^[[36;1mecho "local_image=flask-cicd-aws:scan" >> "$GITHUB_OUTPUT"^[[0m
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3392387Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3393209Z ^[[36;1mecho "Image tag: ${image_tag}"^[[0m
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3480556Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3481861Z ##[endgroup]
+Build, Scan and Publish Image	Prepare image metadata	2026-07-18T14:32:02.3603975Z Image tag: sha-e390452
+Build, Scan and Publish Image	Build image for security verification	﻿2026-07-18T14:32:02.3715100Z ##[group]Run set -euo pipefail
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3716242Z ^[[36;1mset -euo pipefail^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3717376Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3718176Z ^[[36;1mdocker build \^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3719085Z ^[[36;1m  --pull \^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3720020Z ^[[36;1m  --tag "flask-cicd-aws:scan" \^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3721100Z ^[[36;1m  .^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3721883Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3722747Z ^[[36;1mdocker image inspect \^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3723774Z ^[[36;1m  "flask-cicd-aws:scan" \^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3724971Z ^[[36;1m  --format 'image_id={{.Id}} user={{.Config.User}}'^[[0m
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3792987Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:02.3794242Z ##[endgroup]
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:04.9112455Z #0 building with "default" instance using docker driver
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:04.9113245Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:04.9113604Z #1 [internal] load build definition from Dockerfile
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:04.9116598Z #1 transferring dockerfile: 965B 0.0s done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:04.9117727Z #1 DONE 0.0s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:04.9117970Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:04.9118308Z #2 [internal] load metadata for docker.io/library/python:3.12-slim
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.0930291Z #2 ...
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.0930809Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.0931151Z #3 [auth] library/python:pull token for registry-1.docker.io
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.0932602Z #3 DONE 0.0s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.2429272Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.2429909Z #2 [internal] load metadata for docker.io/library/python:3.12-slim
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.5310049Z #2 DONE 0.8s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6668672Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6669934Z #4 [internal] load .dockerignore
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6671471Z #4 transferring context: 218B done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6673261Z #4 DONE 0.0s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6673559Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6673762Z #5 [internal] load build context
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6674262Z #5 transferring context: 1.76kB done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6674715Z #5 DONE 0.0s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6674953Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6675595Z #6 [1/6] FROM docker.io/library/python:3.12-slim@sha256:57cd7c3a7a273101a6485ba99423ee568157882804b1124b4dd04266317710de
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6677694Z #6 resolve docker.io/library/python:3.12-slim@sha256:57cd7c3a7a273101a6485ba99423ee568157882804b1124b4dd04266317710de done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6679103Z #6 sha256:cab2dbf575e971934a81e4622f5aba17aa7929719bd7e31033a3a83b97fd0464 1.75kB / 1.75kB done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6680391Z #6 sha256:25c5b8011a3425a140bf5fa73be0feabd3c0d5b323eecb19dc02437a368ae075 5.66kB / 5.66kB done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6681658Z #6 sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053 16.78MB / 29.78MB 0.1s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6682878Z #6 sha256:98db2485a0d07a8914586b02387e3813aa7e9fed79ab252898d3e96e21c717ea 0B / 1.29MB 0.1s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6684172Z #6 sha256:48347b15c85fd6dde9c5b0259f378fbaee3ce231b30a42f2f2bcc4ea0285cbc9 0B / 12.11MB 0.1s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.6685319Z #6 sha256:57cd7c3a7a273101a6485ba99423ee568157882804b1124b4dd04266317710de 10.37kB / 10.37kB done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.8431202Z #6 sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053 29.78MB / 29.78MB 0.1s done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.8432389Z #6 sha256:98db2485a0d07a8914586b02387e3813aa7e9fed79ab252898d3e96e21c717ea 1.29MB / 1.29MB 0.2s done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.8433115Z #6 sha256:48347b15c85fd6dde9c5b0259f378fbaee3ce231b30a42f2f2bcc4ea0285cbc9 12.11MB / 12.11MB 0.2s done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.8433818Z #6 extracting sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053 0.1s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.8434431Z #6 sha256:fd079632edc0ab4e9d10c77ec348d5057a976e6fc508e93855548096dec2ae1e 0B / 250B 0.2s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:05.9535563Z #6 sha256:fd079632edc0ab4e9d10c77ec348d5057a976e6fc508e93855548096dec2ae1e 250B / 250B 0.2s done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:06.7238403Z #6 extracting sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053 1.0s done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:06.7239967Z #6 extracting sha256:98db2485a0d07a8914586b02387e3813aa7e9fed79ab252898d3e96e21c717ea
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:06.9806326Z #6 extracting sha256:98db2485a0d07a8914586b02387e3813aa7e9fed79ab252898d3e96e21c717ea 0.1s done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:07.6730877Z #6 extracting sha256:48347b15c85fd6dde9c5b0259f378fbaee3ce231b30a42f2f2bcc4ea0285cbc9
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.3163089Z #6 extracting sha256:48347b15c85fd6dde9c5b0259f378fbaee3ce231b30a42f2f2bcc4ea0285cbc9 0.6s done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.3168518Z #6 extracting sha256:fd079632edc0ab4e9d10c77ec348d5057a976e6fc508e93855548096dec2ae1e done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.3169742Z #6 DONE 2.8s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.4674968Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.4676213Z #7 [2/6] RUN groupadd --gid 10001 appgroup     && useradd         --uid 10001         --gid appgroup         --create-home         --shell /usr/sbin/nologin         appuser
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.4764498Z #7 DONE 0.2s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.6637743Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.6638389Z #8 [3/6] WORKDIR /app
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.6639018Z #8 DONE 0.0s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.6639381Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.6644637Z #9 [4/6] COPY requirements.txt .
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.6645450Z #9 DONE 0.0s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.6645952Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:08.6647519Z #10 [5/6] RUN python -m pip install --no-cache-dir --upgrade pip     && python -m pip install --no-cache-dir -r requirements.txt
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:09.7927397Z #10 1.280 Requirement already satisfied: pip in /usr/local/lib/python3.12/site-packages (25.0.1)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:09.9075171Z #10 1.354 Collecting pip
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:09.9076441Z #10 1.394   Downloading pip-26.1.2-py3-none-any.whl.metadata (4.6 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:10.0113654Z #10 1.407 Downloading pip-26.1.2-py3-none-any.whl (1.8 MB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:10.0116519Z #10 1.483    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 32.8 MB/s eta 0:00:00
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:10.0117958Z #10 1.498 Installing collected packages: pip
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:10.2176476Z #10 1.499   Attempting uninstall: pip
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:10.2177400Z #10 1.501     Found existing installation: pip 25.0.1
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:10.2177950Z #10 1.542     Uninstalling pip-25.0.1:
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:10.2178471Z #10 1.554       Successfully uninstalled pip-25.0.1
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:10.9253982Z #10 2.412 Successfully installed pip-26.1.2
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:11.0763241Z #10 2.413 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:11.7710388Z #10 3.258 Collecting blinker==1.9.0 (from -r requirements.txt (line 1))
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:11.8788446Z #10 3.305   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:11.8789215Z #10 3.327 Collecting click==8.4.2 (from -r requirements.txt (line 2))
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:11.8789831Z #10 3.337   Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:11.8790422Z #10 3.356 Collecting Flask==3.1.3 (from -r requirements.txt (line 3))
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:11.8791001Z #10 3.366   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.0265342Z #10 3.388 Collecting gunicorn==26.0.0 (from -r requirements.txt (line 4))
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.0266360Z #10 3.398   Downloading gunicorn-26.0.0-py3-none-any.whl.metadata (5.4 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.0267572Z #10 3.413 Collecting itsdangerous==2.2.0 (from -r requirements.txt (line 5))
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.0268569Z #10 3.423   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.0269448Z #10 3.442 Collecting Jinja2==3.1.6 (from -r requirements.txt (line 6))
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.0270227Z #10 3.452   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.0271045Z #10 3.513 Collecting MarkupSafe==3.0.3 (from -r requirements.txt (line 7))
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.1280051Z #10 3.524   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.1281112Z #10 3.545 Collecting Werkzeug==3.1.7 (from -r requirements.txt (line 8))
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.1282253Z #10 3.556   Downloading werkzeug-3.1.7-py3-none-any.whl.metadata (4.0 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.1282939Z #10 3.579 Collecting packaging (from gunicorn==26.0.0->-r requirements.txt (line 4))
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.1283607Z #10 3.590   Downloading packaging-26.2-py3-none-any.whl.metadata (3.5 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.1284078Z #10 3.605 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.1284464Z #10 3.615 Downloading click-8.4.2-py3-none-any.whl (119 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.2381561Z #10 3.642 Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.2382518Z #10 3.660 Downloading gunicorn-26.0.0-py3-none-any.whl (212 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.2383141Z #10 3.679 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.2383727Z #10 3.690 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.2384638Z #10 3.701 Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.2385591Z #10 3.713 Downloading werkzeug-3.1.7-py3-none-any.whl (226 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.2386166Z #10 3.725 Downloading packaging-26.2-py3-none-any.whl (100 kB)
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.4158236Z #10 3.752 Installing collected packages: packaging, MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, gunicorn, Flask
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.8257018Z #10 4.313
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.9437250Z #10 4.315 Successfully installed Flask-3.1.3 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.7 blinker-1.9.0 click-8.4.2 gunicorn-26.0.0 itsdangerous-2.2.0 packaging-26.2
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.9440952Z #10 4.315 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.9443505Z #10 DONE 4.4s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.9443746Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.9443956Z #11 [6/6] COPY --chown=appuser:appgroup app.py .
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:12.9444465Z #11 DONE 0.0s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:13.0978900Z
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:13.0979417Z #12 exporting to image
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:13.0979888Z #12 exporting layers
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:13.5182780Z #12 exporting layers 0.6s done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:13.5437684Z #12 writing image sha256:338d65369d16268952c4d66a93015f9818079ec81825896dee618b376948af75 done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:13.5439272Z #12 naming to docker.io/library/flask-cicd-aws:scan done
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:13.5440132Z #12 DONE 0.6s
+Build, Scan and Publish Image	Build image for security verification	2026-07-18T14:32:13.5627244Z image_id=sha256:338d65369d16268952c4d66a93015f9818079ec81825896dee618b376948af75 user=10001:10001
+Build, Scan and Publish Image	Scan image with Trivy	﻿2026-07-18T14:32:13.5930100Z ##[group]Run aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5930561Z with:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5930757Z   scan-type: image
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5930981Z   image-ref: flask-cicd-aws:scan
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5931222Z   format: table
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5931418Z   exit-code: 1
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5931611Z   ignore-unfixed: true
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5931827Z   vuln-type: os,library
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5932042Z   severity: HIGH,CRITICAL
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5932258Z   scan-ref: .
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5932568Z   cache-dir: /home/runner/work/flask-cicd-aws/flask-cicd-aws/.cache/trivy
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5932964Z   list-all-pkgs: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5933178Z   version: v0.70.0
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5933370Z   cache: true
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5933560Z   skip-setup-trivy: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5935828Z   token-setup-trivy: ***
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.5936078Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6135527Z ##[group]Run aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6135991Z with:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6136176Z   version: v0.70.0
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6136374Z   cache: true
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6138995Z   token: ***
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6139218Z   path: $HOME/.local/bin
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6139479Z   github-server-url: https://github.com
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6139786Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6163094Z ##[group]Run echo "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6163549Z ^[[36;1mecho "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6221828Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6222206Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6371102Z ##[group]Run actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6371501Z with:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6371717Z   path: /home/runner/.local/bin/trivy-bin
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6372007Z   key: trivy-binary-v0.70.0-Linux-X64
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6372279Z   enableCrossOsArchive: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6372529Z   fail-on-cache-miss: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6372777Z   lookup-only: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.6372980Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:13.9688902Z Cache hit for: trivy-binary-v0.70.0-Linux-X64
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.2113153Z Received 16777216 of 43751163 (38.3%), 16.0 MBs/sec
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.4605326Z Received 43751163 of 43751163 (100.0%), 33.4 MBs/sec
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.4605971Z Cache Size: ~42 MB (43751163 B)
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.4636669Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c65f30a4-72ad-4cb4-a780-9b5d972a9b1c/cache.tzst -P -C /home/runner/work/flask-cicd-aws/flask-cicd-aws --use-compress-program unzstd
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7087445Z Cache restored successfully
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7188574Z Cache restored from key: trivy-binary-v0.70.0-Linux-X64
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7323671Z ##[group]Run echo /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7324555Z ^[[36;1mecho /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7406405Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7407099Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7524898Z ##[group]Run echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7525330Z ^[[36;1mecho "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7582704Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7583075Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7734008Z ##[group]Run actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7734386Z with:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7734685Z   path: /home/runner/work/flask-cicd-aws/flask-cicd-aws/.cache/trivy
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7735073Z   key: cache-trivy-2026-07-18
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7735354Z   restore-keys: cache-trivy-
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7735607Z   enableCrossOsArchive: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7735859Z   fail-on-cache-miss: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7736092Z   lookup-only: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7736313Z   save-always: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:15.7736532Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:16.1017484Z Cache hit for restore-key: cache-trivy-2026-07-17
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:17.3740588Z Received 8388608 of 73998249 (11.3%), 8.0 MBs/sec
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:17.9708229Z Received 73998249 of 73998249 (100.0%), 44.1 MBs/sec
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:17.9710953Z Cache Size: ~71 MB (73998249 B)
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:17.9780324Z [command]/usr/bin/tar -xf /home/runner/work/_temp/1faefd58-72a6-42ee-9ff1-50ac414547a2/cache.tzst -P -C /home/runner/work/flask-cicd-aws/flask-cicd-aws --use-compress-program unzstd
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.3891198Z Cache restored successfully
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4008415Z Cache restored from key: cache-trivy-2026-07-17
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4119051Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4119472Z ^[[36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4177757Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4178135Z env:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4178636Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/aquasecurity/trivy-action/ed142fd0673e97e23eac54620cfb913e5ce36c25
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4179284Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4277392Z ##[group]Run rm -f trivy_envs.txt
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4277707Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4277952Z ^[[36;1mtouch trivy_envs.txt^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4331029Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4331400Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4449846Z ##[group]Run # Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4450788Z ^[[36;1m# Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4451475Z ^[[36;1m# This limitation affects how we handle default values and empty inputs.^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4452026Z ^[[36;1m# For more information, see: https://github.com/actions/runner/issues/924^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4452419Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4452781Z ^[[36;1m# The following logic implements the configuration priority described in the README:^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4453230Z ^[[36;1m#^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4453425Z ^[[36;1m# Inputs^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4453650Z ^[[36;1m# Environment Variables^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4453908Z ^[[36;1m# Config File^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4454128Z ^[[36;1m# Defaults^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4454341Z ^[[36;1m#^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4454757Z ^[[36;1m# As noted above defaults are awkward to handle as GitHub Actions will inject those values as the input^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4455450Z ^[[36;1m# if the caller doesn't provide them, thus if the input matches the default we don't set it as we^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4456316Z ^[[36;1m# can't tell the difference.  Plus if we did set it when it was the default value then it could potentially^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4457332Z ^[[36;1m# override an external environment variable, or something in the callers configuration file, which then wouldn't^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4457934Z ^[[36;1m# match the configuration priority that is documented.^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4458304Z ^[[36;1mset_env_var_if_provided() {^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4458573Z ^[[36;1m  local var_name="$1"^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4458833Z ^[[36;1m  local input_value="$2"^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4459092Z ^[[36;1m  local default_value="$3"^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4459337Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4459651Z ^[[36;1m  if [ -n "$input_value" ] && [ "$input_value" != "$default_value" ]; then^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4460164Z ^[[36;1m    # If action was provided with explicit input by the caller set that^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4460703Z ^[[36;1m    # Use printf %q to safely escape special characters and prevent command injection^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4461244Z ^[[36;1m    printf 'export %s=%q\n' "$var_name" "$input_value" >> trivy_envs.txt^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4461619Z ^[[36;1m  fi^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4461813Z ^[[36;1m}^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4461992Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4462289Z ^[[36;1m# Set environment variables, handling those with default values^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4463045Z ^[[36;1m# cf. https://aquasecurity.github.io/trivy/latest/docs/configuration/#environment-variables^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4463601Z ^[[36;1mset_env_var_if_provided "TRIVY_INPUT" "$INPUT_INPUT" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4464025Z ^[[36;1mset_env_var_if_provided "TRIVY_EXIT_CODE" "$INPUT_EXIT_CODE" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4464523Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_UNFIXED" "$INPUT_IGNORE_UNFIXED" "false"^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4465059Z ^[[36;1mset_env_var_if_provided "TRIVY_PKG_TYPES" "$INPUT_VULN_TYPE" "os,library"^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4465654Z ^[[36;1mset_env_var_if_provided "TRIVY_SEVERITY" "$INPUT_SEVERITY" "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4466201Z ^[[36;1mset_env_var_if_provided "TRIVY_FORMAT" "$INPUT_FORMAT" "table"^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4466638Z ^[[36;1mset_env_var_if_provided "TRIVY_TEMPLATE" "$INPUT_TEMPLATE" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4467354Z ^[[36;1mset_env_var_if_provided "TRIVY_OUTPUT" "$INPUT_OUTPUT" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4467789Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_DIRS" "$INPUT_SKIP_DIRS" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4468252Z ^[[36;1mset_env_var_if_provided "TRIVY_SKIP_FILES" "$INPUT_SKIP_FILES" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4468697Z ^[[36;1mset_env_var_if_provided "TRIVY_TIMEOUT" "$INPUT_TIMEOUT" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4469159Z ^[[36;1mset_env_var_if_provided "TRIVY_IGNORE_POLICY" "$INPUT_IGNORE_POLICY" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4469636Z ^[[36;1mset_env_var_if_provided "TRIVY_QUIET" "$INPUT_HIDE_PROGRESS" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4470123Z ^[[36;1mset_env_var_if_provided "TRIVY_LIST_ALL_PKGS" "$INPUT_LIST_ALL_PKGS" "false"^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4470614Z ^[[36;1mset_env_var_if_provided "TRIVY_SCANNERS" "$INPUT_SCANNERS" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4471054Z ^[[36;1mset_env_var_if_provided "TRIVY_CONFIG" "$INPUT_TRIVY_CONFIG" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4471482Z ^[[36;1mset_env_var_if_provided "TRIVY_TF_VARS" "$INPUT_TF_VARS" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4471934Z ^[[36;1mset_env_var_if_provided "TRIVY_DOCKER_HOST" "$INPUT_DOCKER_HOST" ""^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4526424Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4527037Z env:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4527237Z   INPUT_INPUT:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4527455Z   INPUT_EXIT_CODE: 1
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4527677Z   INPUT_IGNORE_UNFIXED: true
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4527925Z   INPUT_VULN_TYPE: os,library
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4528178Z   INPUT_SEVERITY: HIGH,CRITICAL
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4528425Z   INPUT_FORMAT: table
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4528647Z   INPUT_TEMPLATE:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4528852Z   INPUT_OUTPUT:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4529052Z   INPUT_SKIP_DIRS:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4529470Z   INPUT_SKIP_FILES:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4529686Z   INPUT_TIMEOUT:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4529892Z   INPUT_IGNORE_POLICY:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4530110Z   INPUT_HIDE_PROGRESS:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4530335Z   INPUT_LIST_ALL_PKGS: false
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4530564Z   INPUT_SCANNERS:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4530774Z   INPUT_TRIVY_CONFIG:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4530980Z   INPUT_TF_VARS:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4531175Z   INPUT_DOCKER_HOST:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4531392Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4631867Z ##[group]Run entrypoint.sh
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4632144Z ^[[36;1mentrypoint.sh^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4685808Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4686162Z env:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4686362Z   INPUT_SCAN_TYPE: image
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4686631Z   INPUT_IMAGE_REF: flask-cicd-aws:scan
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4687215Z   INPUT_SCAN_REF: .
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4687444Z   INPUT_TRIVYIGNORES:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4687665Z   INPUT_GITHUB_PAT:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4687898Z   INPUT_LIMIT_SEVERITIES_FOR_SARIF:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4688300Z   TRIVY_CACHE_DIR: /home/runner/work/flask-cicd-aws/flask-cicd-aws/.cache/trivy
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4688696Z ##[endgroup]
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.4787666Z Running Trivy with options: trivy image flask-cicd-aws:scan
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.5308840Z 2026-07-18T14:32:19Z	INFO	[vulndb] Need to update DB
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.5309349Z 2026-07-18T14:32:19Z	INFO	[vulndb] Downloading vulnerability DB...
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:19.5310453Z 2026-07-18T14:32:19Z	INFO	[vulndb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-db:2"
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:24.5684449Z 22.61 MiB / 100.43 MiB [------------->______________________________________________] 22.51% ? p/s ?75.71 MiB / 100.43 MiB [--------------------------------------------->______________] 75.38% ? p/s ?100.43 MiB / 100.43 MiB [--------------------------------------------------------->] 100.00% ? p/s ?100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 129.87 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 129.87 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 129.87 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 121.49 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 121.49 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 121.49 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 113.65 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 113.65 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 113.65 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 106.32 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 106.32 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [------------------------------------------->] 100.00% 106.32 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [-------------------------------------------->] 100.00% 99.46 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [-------------------------------------------->] 100.00% 99.46 MiB p/s ETA 0s100.43 MiB / 100.43 MiB [-----------------------------------------------] 100.00% 31.12 MiB p/s 3.4s2026-07-18T14:32:24Z	INFO	[vulndb] Artifact successfully downloaded	repo="mirror.gcr.io/aquasec/trivy-db:2"
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:24.5695650Z 2026-07-18T14:32:24Z	INFO	[vuln] Vulnerability scanning is enabled
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:24.5696458Z 2026-07-18T14:32:24Z	INFO	[secret] Secret scanning is enabled
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:24.5697751Z 2026-07-18T14:32:24Z	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:24.5703381Z 2026-07-18T14:32:24Z	INFO	[secret] Please see https://trivy.dev/docs/v0.70/guide/scanner/secret#recommendation for faster secret detection
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5603857Z 2026-07-18T14:32:28Z	INFO	Detected OS	family="debian" version="13.6"
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5605616Z 2026-07-18T14:32:28Z	INFO	[debian] Detecting vulnerabilities...	os_version="13" pkg_num=87
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5720934Z 2026-07-18T14:32:28Z	INFO	Number of language-specific files	num=1
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5721839Z 2026-07-18T14:32:28Z	INFO	[python-pkg] Detecting vulnerabilities...
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5733741Z 2026-07-18T14:32:28Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.70/guide/scanner/vulnerability#severity-selection for details.
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5948221Z
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5948905Z Report Summary
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5949404Z
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5950807Z ┌──────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5951480Z
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5951737Z 📣 ^[[34mNotices:^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5952303Z   - Version 0.72.0 of Trivy is now available, current version is 0.70.0
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5952752Z
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5952991Z To suppress version checks, run Trivy scans with the --skip-version-check flag
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5953315Z
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5953640Z │                                    Target                                    │    Type    │ Vulnerabilities │ Secrets │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5954336Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5955594Z │ flask-cicd-aws:scan (debian 13.6)                                            │   debian   │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5956309Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5957631Z │ usr/local/lib/python3.12/site-packages/blinker-1.9.0.dist-info/METADATA      │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5958480Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5959276Z │ usr/local/lib/python3.12/site-packages/click-8.4.2.dist-info/METADATA        │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5960058Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5960793Z │ usr/local/lib/python3.12/site-packages/flask-3.1.3.dist-info/METADATA        │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5961592Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5962324Z │ usr/local/lib/python3.12/site-packages/gunicorn-26.0.0.dist-info/METADATA    │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5963103Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5963894Z │ usr/local/lib/python3.12/site-packages/itsdangerous-2.2.0.dist-info/METADATA │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5964930Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5965685Z │ usr/local/lib/python3.12/site-packages/jinja2-3.1.6.dist-info/METADATA       │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5966466Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5967932Z │ usr/local/lib/python3.12/site-packages/markupsafe-3.0.3.dist-info/METADATA   │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5969124Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5969872Z │ usr/local/lib/python3.12/site-packages/packaging-26.2.dist-info/METADATA     │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5970659Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5971418Z │ usr/local/lib/python3.12/site-packages/pip-26.1.2.dist-info/METADATA         │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5972189Z ├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5973118Z │ usr/local/lib/python3.12/site-packages/werkzeug-3.1.7.dist-info/METADATA     │ python-pkg │        0        │    -    │
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5973913Z └──────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5974310Z Legend:
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5974508Z - '-': Not scanned
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5974750Z - '0': Clean (no security findings detected)
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.5974958Z
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.6050672Z ##[group]Run rm -f trivy_envs.txt
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.6051185Z ^[[36;1mrm -f trivy_envs.txt^[[0m
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.6129785Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Scan image with Trivy	2026-07-18T14:32:28.6130382Z ##[endgroup]
+Build, Scan and Publish Image	Log in to Docker Hub	﻿2026-07-18T14:32:28.6275428Z ##[group]Run set -euo pipefail
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6275787Z ^[[36;1mset -euo pipefail^[[0m
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6276027Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6276237Z ^[[36;1mtest -n "$DOCKERHUB_USERNAME"^[[0m
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6276528Z ^[[36;1mtest -n "$DOCKERHUB_TOKEN"^[[0m
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6277085Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6277306Z ^[[36;1mprintf '%s' "$DOCKERHUB_TOKEN" |^[[0m
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6277596Z ^[[36;1m  docker login \^[[0m
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6277865Z ^[[36;1m    --username "$DOCKERHUB_USERNAME" \^[[0m
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6278177Z ^[[36;1m    --password-stdin^[[0m
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6334273Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6334643Z env:
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6335239Z   DOCKERHUB_USERNAME: ***
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6335607Z   DOCKERHUB_TOKEN: ***
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:28.6335843Z ##[endgroup]
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:29.1905749Z
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:29.1906434Z Login Succeeded
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:29.1907599Z WARNING! Your credentials are stored unencrypted in '/home/runner/.docker/config.json'.
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:29.1908837Z Configure a credential helper to remove this warning. See
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:29.1909421Z https://docs.docker.com/go/credential-store/
+Build, Scan and Publish Image	Log in to Docker Hub	2026-07-18T14:32:29.1909746Z
+Build, Scan and Publish Image	Tag and push verified image	﻿2026-07-18T14:32:29.1968790Z ##[group]Run set -euo pipefail
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1969128Z ^[[36;1mset -euo pipefail^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1969369Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1969656Z ^[[36;1mimage_repository="${DOCKERHUB_USERNAME}/flask-cicd-aws"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1970082Z ^[[36;1mimmutable_image="${image_repository}:${IMAGE_TAG}"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1970452Z ^[[36;1mlatest_image="${image_repository}:latest"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1970745Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1970978Z ^[[36;1mdocker tag "$LOCAL_IMAGE" "$immutable_image"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1971316Z ^[[36;1mdocker tag "$LOCAL_IMAGE" "$latest_image"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1971611Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1971819Z ^[[36;1mdocker push "$immutable_image"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1972100Z ^[[36;1mdocker push "$latest_image"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1972352Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1972529Z ^[[36;1m{^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1972743Z ^[[36;1m  echo "## Published Docker image"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1973023Z ^[[36;1m  echo^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1973274Z ^[[36;1m  echo "- Immutable tag: \`$immutable_image\`"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1973650Z ^[[36;1m  echo "- Convenience tag: \`$latest_image\`"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1973990Z ^[[36;1m  echo "- Source commit: \`$GITHUB_SHA\`"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.1974284Z ^[[36;1m} >> "$GITHUB_STEP_SUMMARY"^[[0m
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.2034732Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.2035083Z env:
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.2035441Z   DOCKERHUB_USERNAME: ***
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.2035696Z   IMAGE_TAG: sha-e390452
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.2035944Z   LOCAL_IMAGE: flask-cicd-aws:scan
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.2036210Z ##[endgroup]
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.2604404Z The push refers to repository [docker.io/***/flask-cicd-aws]
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4240018Z 2fc7052d17df: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4251687Z 9390c66b4fe3: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4252471Z 2dd4cde79032: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4253064Z da5fe61df382: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4253628Z 9730311b93ad: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4254155Z b80f3ed1ee6d: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4254710Z 83fdf57f71f2: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4255464Z ccbaccfc0388: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4255998Z f2ec4de84f55: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4256780Z 83fdf57f71f2: Waiting
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4263071Z ccbaccfc0388: Waiting
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:29.4263750Z f2ec4de84f55: Waiting
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:31.0976497Z 2dd4cde79032: Pushed
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:31.1595527Z da5fe61df382: Pushed
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:31.1865133Z 9730311b93ad: Pushed
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:31.2290124Z 2fc7052d17df: Pushed
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:31.2677164Z b80f3ed1ee6d: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:31.3276491Z 83fdf57f71f2: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:31.3657999Z ccbaccfc0388: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:31.4047168Z f2ec4de84f55: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:32.1968763Z 9390c66b4fe3: Pushed
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.6490729Z sha-e390452: digest: sha256:30d84bce5c07c32ba40e37a545b65895fd8c052f4f755f646ead38d3ee68900f size: 2198
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.6629131Z The push refers to repository [docker.io/***/flask-cicd-aws]
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8423510Z 2fc7052d17df: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8424588Z 9390c66b4fe3: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8425607Z 2dd4cde79032: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8426376Z da5fe61df382: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8427086Z 9730311b93ad: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8427521Z b80f3ed1ee6d: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8427953Z 83fdf57f71f2: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8428403Z ccbaccfc0388: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8428870Z f2ec4de84f55: Preparing
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8429244Z b80f3ed1ee6d: Waiting
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8429595Z 83fdf57f71f2: Waiting
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8430011Z ccbaccfc0388: Waiting
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:35.8430267Z f2ec4de84f55: Waiting
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:36.1222843Z 2dd4cde79032: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:36.1260078Z 9730311b93ad: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:36.1408856Z 2fc7052d17df: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:36.1409916Z da5fe61df382: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:36.1412887Z 9390c66b4fe3: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:36.2963565Z b80f3ed1ee6d: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:36.3027036Z ccbaccfc0388: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:36.3085018Z 83fdf57f71f2: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:36.3234494Z f2ec4de84f55: Layer already exists
+Build, Scan and Publish Image	Tag and push verified image	2026-07-18T14:32:38.2231393Z latest: digest: sha256:30d84bce5c07c32ba40e37a545b65895fd8c052f4f755f646ead38d3ee68900f size: 2198
+Build, Scan and Publish Image	Verify published immutable image	﻿2026-07-18T14:32:38.2292191Z ##[group]Run set -euo pipefail
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2292540Z ^[[36;1mset -euo pipefail^[[0m
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2292787Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2293113Z ^[[36;1mimmutable_image="${DOCKERHUB_USERNAME}/flask-cicd-aws:${IMAGE_TAG}"^[[0m
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2293527Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2293789Z ^[[36;1mdocker buildx imagetools inspect "$immutable_image"^[[0m
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2294125Z ^[[36;1m^[[0m
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2294366Z ^[[36;1mecho "Verified remote image: $immutable_image"^[[0m
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2352414Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2352817Z env:
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2353104Z   DOCKERHUB_USERNAME: ***
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2353389Z   IMAGE_TAG: sha-e390452
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.2353646Z ##[endgroup]
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.8337464Z Name:      docker.io/***/flask-cicd-aws:sha-e390452
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.8338280Z MediaType: application/vnd.docker.distribution.manifest.v2+json
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.8338986Z Digest:    sha256:30d84bce5c07c32ba40e37a545b65895fd8c052f4f755f646ead38d3ee68900f
+Build, Scan and Publish Image	Verify published immutable image	2026-07-18T14:32:38.8372426Z Verified remote image: ***/flask-cicd-aws:sha-e390452
+Build, Scan and Publish Image	Post Scan image with Trivy	﻿2026-07-18T14:32:38.8568434Z Post job cleanup.
+Build, Scan and Publish Image	Post Scan image with Trivy	2026-07-18T14:32:38.8603282Z Post job cleanup.
+Build, Scan and Publish Image	Post Scan image with Trivy	2026-07-18T14:32:39.0144660Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/flask-cicd-aws/flask-cicd-aws --files-from manifest.txt --use-compress-program zstdmt
+Build, Scan and Publish Image	Post Scan image with Trivy	2026-07-18T14:32:41.7085186Z Sent 27983872 of 73899789 (37.9%), 26.7 MBs/sec
+Build, Scan and Publish Image	Post Scan image with Trivy	2026-07-18T14:32:42.7094172Z Sent 73899789 of 73899789 (100.0%), 35.2 MBs/sec
+Build, Scan and Publish Image	Post Scan image with Trivy	2026-07-18T14:32:43.0905780Z Cache saved with key: cache-trivy-2026-07-18
+Build, Scan and Publish Image	Post Scan image with Trivy	2026-07-18T14:32:43.1085259Z Post job cleanup.
+Build, Scan and Publish Image	Post Check out repository	﻿2026-07-18T14:32:43.1148493Z Post job cleanup.
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2044902Z [command]/usr/bin/git version
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2088526Z git version 2.54.0
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2130983Z Temporarily overriding HOME='/home/runner/work/_temp/a6afc338-cc2b-459c-abff-e71f4be2b16f' before making global git config changes
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2132358Z Adding repository directory to the temporary git global config as a safe directory
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2137839Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flask-cicd-aws/flask-cicd-aws
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2178088Z Removing SSH command configuration
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2187667Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2246119Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2507728Z Removing HTTP extra header
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2515427Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2563284Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2814154Z Removing includeIf entries pointing to credentials config files
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2821573Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2861154Z includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git.path
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2862385Z includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/worktrees/*.path
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2863463Z includeif.gitdir:/github/workspace/.git.path
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2864307Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2871450Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git.path
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2900514Z /home/runner/work/_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2911013Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git.path /home/runner/work/_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2957783Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/worktrees/*.path
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.2990492Z /home/runner/work/_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.3002425Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.3042574Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.3071124Z /github/runner_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.3079834Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.3116915Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.3143703Z /github/runner_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.3151111Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.3188023Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Build, Scan and Publish Image	Post Check out repository	2026-07-18T14:32:43.3418615Z Removing credentials config '/home/runner/work/_temp/git-credentials-cfc46ebe-f827-4745-a77d-6af0e657cbfd.config'
+Build, Scan and Publish Image	Complete job	﻿2026-07-18T14:32:43.3575461Z Cleaning up orphan processes

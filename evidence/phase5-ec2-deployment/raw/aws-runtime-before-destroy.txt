@@ -1,0 +1,32 @@
+CapturedAtUTC=2026-07-18T14:52:55Z
+
+=== EC2 ===
+{
+    "InstanceId": "i-0df673da1758aaca4",
+    "State": "running",
+    "InstanceType": "t3.micro",
+    "ImageId": "ami-0fd6240f599091088",
+    "PublicIP": "32.192.209.173",
+    "PrivateIP": "172.31.35.18",
+    "AvailabilityZone": "us-east-1d",
+    "SecurityGroups": [
+        "sg-04a393a42ca947d5e"
+    ],
+    "MetadataTokens": "required"
+}
+
+=== EC2 status ===
+{
+    "State": "running",
+    "SystemStatus": "ok",
+    "InstanceStatus": "ok"
+}
+
+=== SSM ===
+{
+    "InstanceId": "i-0df673da1758aaca4",
+    "PingStatus": "Online",
+    "AgentVersion": "3.3.4624.0",
+    "PlatformName": "Amazon Linux",
+    "PlatformVersion": "2023"
+}

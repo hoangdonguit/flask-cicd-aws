@@ -1,0 +1,72 @@
+CapturedAtUTC=2026-07-18T14:52:54Z
+
+=== Deployment status ===
+=== Container ===
+name=flask-cicd-aws image=hoangdonguit/flask-cicd-aws:sha-5edfc15 status=Up 11 minutes (healthy) ports=0.0.0.0:80->5000/tcp
+
+=== Current image ===
+hoangdonguit/flask-cicd-aws:sha-5edfc15
+
+=== Previous image ===
+hoangdonguit/flask-cicd-aws:sha-e390452
+
+=== Recent deployment history ===
+2026-07-18T14:14:46Z action=deploy image=hoangdonguit/flask-cicd-aws:sha-5edfc15 previous=none
+2026-07-18T14:40:29Z action=deploy image=hoangdonguit/flask-cicd-aws:sha-e390452 previous=hoangdonguit/flask-cicd-aws:sha-5edfc15
+2026-07-18T14:41:11Z action=deploy image=hoangdonguit/flask-cicd-aws:sha-5edfc15 previous=hoangdonguit/flask-cicd-aws:sha-e390452
+2026-07-18T14:41:11Z action=rollback image=hoangdonguit/flask-cicd-aws:sha-5edfc15
+
+=== Container identity ===
+configured_user=10001:10001 image=hoangdonguit/flask-cicd-aws:sha-5edfc15 restart=unless-stopped readonly=true
+uid=10001(appuser) gid=10001(appgroup) groups=10001(appgroup)
+
+=== Container state ===
+status=running health=healthy
+
+=== Runtime constraints ===
+memory=268435456 nano_cpus=750000000 pids=128 cap_drop=["ALL"] security=["no-new-privileges:true"]
+
+=== Network binding ===
+5000/tcp -> 0.0.0.0:80
+
+=== Recent logs ===
+[2026-07-18 14:41:10 +0000] [1] [INFO] Using worker: gthread
+[2026-07-18 14:41:10 +0000] [7] [INFO] Booting worker with pid: 7
+[2026-07-18 14:41:10 +0000] [8] [INFO] Booting worker with pid: 8
+[2026-07-18 14:41:10 +0000] [1] [ERROR] Control server error: [Errno 30] Read-only file system: '/home/appuser/.gunicorn'
+172.17.0.1 - - [18/Jul/2026:14:41:11 +0000] "GET /health HTTP/1.1" 200 63 "-" "curl/8.17.0"
+172.17.0.1 - - [18/Jul/2026:14:41:11 +0000] "GET /version HTTP/1.1" 200 75 "-" "curl/8.17.0"
+172.203.7.52 - - [18/Jul/2026:14:41:20 +0000] "GET /health HTTP/1.1" 200 63 "-" "curl/8.5.0"
+172.203.7.52 - - [18/Jul/2026:14:41:20 +0000] "GET /version HTTP/1.1" 200 75 "-" "curl/8.5.0"
+172.203.7.52 - - [18/Jul/2026:14:41:20 +0000] "GET /metadata HTTP/1.1" 200 165 "-" "curl/8.5.0"
+171.253.136.148 - - [18/Jul/2026:14:41:25 +0000] "GET /health HTTP/1.1" 200 63 "-" "curl/8.5.0"
+171.253.136.148 - - [18/Jul/2026:14:41:26 +0000] "GET /version HTTP/1.1" 200 75 "-" "curl/8.5.0"
+127.0.0.1 - - [18/Jul/2026:14:41:39 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:42:10 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:42:40 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:43:11 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:43:41 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:44:12 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:44:42 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+93.174.93.12 - - [18/Jul/2026:14:44:55 +0000] "GET / HTTP/1.0" 200 184 "-" "Opera/9.80 (S60; SymbOS; Opera Mobi/499; U; ru) Presto/2.4.18 Version/10.00"
+127.0.0.1 - - [18/Jul/2026:14:45:13 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:45:43 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:46:14 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+171.253.136.148 - - [18/Jul/2026:14:46:44 +0000] "GET /health HTTP/1.1" 200 63 "-" "curl/8.5.0"
+127.0.0.1 - - [18/Jul/2026:14:46:44 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+171.253.136.148 - - [18/Jul/2026:14:46:45 +0000] "GET /version HTTP/1.1" 200 75 "-" "curl/8.5.0"
+127.0.0.1 - - [18/Jul/2026:14:47:15 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:47:45 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:48:16 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:48:46 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:49:17 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:49:47 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:50:18 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:50:48 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:51:19 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:51:49 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+127.0.0.1 - - [18/Jul/2026:14:52:20 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"
+171.253.136.148 - - [18/Jul/2026:14:52:48 +0000] "GET /health HTTP/1.1" 200 63 "-" "curl/8.5.0"
+171.253.136.148 - - [18/Jul/2026:14:52:49 +0000] "GET /version HTTP/1.1" 200 75 "-" "curl/8.5.0"
+171.253.136.148 - - [18/Jul/2026:14:52:50 +0000] "GET /metadata HTTP/1.1" 200 165 "-" "curl/8.5.0"
+127.0.0.1 - - [18/Jul/2026:14:52:50 +0000] "GET /health HTTP/1.1" 200 63 "-" "Python-urllib/3.12"

@@ -1,0 +1,34 @@
+CapturedAtUTC=2026-07-18T13:47:33Z
+
+=== Identity ===
+ip-172-31-35-18.ec2.internal
+ec2-user
+uid=1000(ec2-user) gid=1000(ec2-user) groups=1000(ec2-user),4(adm),10(wheel),190(systemd-journal),992(docker) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+=== Operating system ===
+NAME="Amazon Linux"
+VERSION="2023"
+PRETTY_NAME="Amazon Linux 2023.12.20260710"
+
+=== Cloud-init ===
+status: done
+time: Sat, 18 Jul 2026 13:38:14 +0000
+detail:
+DataSourceEc2
+
+=== Docker ===
+enabled
+active
+Docker version 25.0.14, build 0bab007
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+=== Application directory ===
+owner=ec2-user group=ec2-user mode=755 path=/opt/flask-cicd-aws
+
+=== SSM agent ===
+enabled
+active
+
+=== IMDSv2 enforcement ===
+TokenlessStatus=401
+IMDSv2InstanceId=i-0df673da1758aaca4

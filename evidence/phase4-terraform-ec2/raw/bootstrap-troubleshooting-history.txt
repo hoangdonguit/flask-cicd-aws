@@ -1,0 +1,55 @@
+=== Initial Terraform implementation ===
+99cc501 infra: add Terraform EC2 sandbox provisioning
+ .gitignore                         |  13 +++++
+ terraform/.terraform.lock.hcl      |  26 +++++++++
+ terraform/main.tf                  | 115 +++++++++++++++++++++++++++++++++++++
+ terraform/outputs.tf               |  34 +++++++++++
+ terraform/providers.tf             |  12 ++++
+ terraform/terraform.tfvars.example |   5 ++
+ terraform/user-data.sh             |  20 +++++++
+ terraform/variables.tf             |  60 +++++++++++++++++++
+ terraform/versions.tf              |  10 ++++
+ 9 files changed, 295 insertions(+)
+
+=== Bootstrap correction ===
+0f18eac (HEAD -> feature/phase4-terraform-ec2, origin/feature/phase4-terraform-ec2) fix(infra): resolve Amazon Linux bootstrap conflict
+ terraform/user-data.sh | 13 +++++++++----
+ 1 file changed, 9 insertions(+), 4 deletions(-)
+
+=== Exact user-data correction ===
+commit 0f18eacc5dac10090506446f697b2a6b83b7dc2b
+Author:     Hoàng Xuân Đồng <hoangxuandong2005@gmail.com>
+AuthorDate: Sat Jul 18 20:32:03 2026 +0700
+Commit:     Hoàng Xuân Đồng <hoangxuandong2005@gmail.com>
+CommitDate: Sat Jul 18 20:32:03 2026 +0700
+
+    fix(infra): resolve Amazon Linux bootstrap conflict
+
+diff --git a/terraform/user-data.sh b/terraform/user-data.sh
+index 74a2efc..de6e2a3 100755
+--- a/terraform/user-data.sh
++++ b/terraform/user-data.sh
+@@ -2,14 +2,19 @@
+ 
+ set -euxo pipefail
+ 
+-dnf update -y
+-dnf install -y docker curl jq
++# Amazon Linux 2023 already provides curl through curl-minimal.
++# Installing the full curl package would conflict with curl-minimal.
++dnf install -y docker jq
+ 
+ systemctl enable --now docker
+ usermod -aG docker ec2-user
+ 
+-mkdir -p /opt/flask-cicd-aws
+-chown ec2-user:ec2-user /opt/flask-cicd-aws
++install \
++  -d \
++  -o ec2-user \
++  -g ec2-user \
++  -m 0755 \
++  /opt/flask-cicd-aws
+ 
+ systemctl enable --now amazon-ssm-agent || true
+ 

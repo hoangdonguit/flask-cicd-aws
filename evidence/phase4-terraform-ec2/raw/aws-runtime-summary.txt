@@ -1,0 +1,36 @@
+CapturedAtUTC=2026-07-18T13:47:24Z
+
+=== EC2 summary ===
+{
+    "InstanceId": "i-0df673da1758aaca4",
+    "State": "running",
+    "InstanceType": "t3.micro",
+    "AMI": "ami-0fd6240f599091088",
+    "AvailabilityZone": "us-east-1d",
+    "PublicIP": "32.192.209.173",
+    "PrivateIP": "172.31.35.18",
+    "SubnetId": "subnet-025c958da87196336",
+    "VpcId": "vpc-0277e70bbb2a456f0",
+    "KeyName": "vockey",
+    "InstanceProfile": "arn:aws:iam::014104256882:instance-profile/LabInstanceProfile",
+    "SecurityGroups": [
+        "sg-04a393a42ca947d5e"
+    ],
+    "MetadataTokens": "required"
+}
+
+=== EC2 status checks ===
+{
+    "InstanceState": "running",
+    "SystemStatus": "ok",
+    "InstanceStatus": "ok"
+}
+
+=== SSM registration ===
+{
+    "InstanceId": "i-0df673da1758aaca4",
+    "PingStatus": "Online",
+    "PlatformName": "Amazon Linux",
+    "PlatformVersion": "2023",
+    "AgentVersion": "3.3.4624.0"
+}

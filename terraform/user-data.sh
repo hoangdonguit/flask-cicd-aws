@@ -2,14 +2,19 @@
 
 set -euxo pipefail
 
-dnf update -y
-dnf install -y docker curl jq
+# Amazon Linux 2023 already provides curl through curl-minimal.
+# Installing the full curl package would conflict with curl-minimal.
+dnf install -y docker jq
 
 systemctl enable --now docker
 usermod -aG docker ec2-user
 
-mkdir -p /opt/flask-cicd-aws
-chown ec2-user:ec2-user /opt/flask-cicd-aws
+install \
+  -d \
+  -o ec2-user \
+  -g ec2-user \
+  -m 0755 \
+  /opt/flask-cicd-aws
 
 systemctl enable --now amazon-ssm-agent || true
 

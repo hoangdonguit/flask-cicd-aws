@@ -1,0 +1,381 @@
+name: EC2 Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Deployment operation
+        required: true
+        default: deploy
+        type: choice
+        options:
+          - deploy
+          - rollback
+
+      image_tag:
+        description: Immutable Docker image tag, for example sha-5edfc15
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ec2-production-deployment
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy through AWS Systems Manager
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+      INSTANCE_ID: ${{ secrets.AWS_EC2_INSTANCE_ID }}
+
+      IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+      OPERATION: ${{ inputs.operation }}
+      IMAGE_TAG: ${{ inputs.image_tag }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Validate deployment request
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          required_values=(
+            AWS_ACCESS_KEY_ID
+            AWS_SECRET_ACCESS_KEY
+            AWS_SESSION_TOKEN
+            AWS_REGION
+            INSTANCE_ID
+          )
+
+          for variable in "${required_values[@]}"; do
+            if [ -z "${!variable:-}" ]; then
+              echo "Missing required GitHub secret: $variable"
+              exit 1
+            fi
+          done
+
+          case "$OPERATION" in
+            deploy)
+              if [[ ! "$IMAGE_TAG" =~ ^sha-[0-9a-f]{7}$ ]]; then
+                echo "Deploy requires image_tag matching sha-<7 lowercase hex>"
+                exit 1
+              fi
+              ;;
+
+            rollback)
+              if [ -n "$IMAGE_TAG" ]; then
+                echo "image_tag is ignored for rollback"
+              fi
+              ;;
+
+            *)
+              echo "Unsupported operation: $OPERATION"
+              exit 1
+              ;;
+          esac
+
+          echo "Operation: $OPERATION"
+          echo "Instance ID: $INSTANCE_ID"
+          echo "Region: $AWS_REGION"
+
+      - name: Verify AWS identity and SSM target
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          aws sts get-caller-identity \
+            --query '{
+              Account:Account,
+              Arn:Arn
+            }' \
+            --output table
+
+          SSM_STATUS="$(
+            aws ssm describe-instance-information \
+              --filters "Key=InstanceIds,Values=$INSTANCE_ID" \
+              --query 'InstanceInformationList[0].PingStatus' \
+              --output text
+          )"
+
+          echo "SSM status: $SSM_STATUS"
+
+          test "$SSM_STATUS" = "Online"
+
+      - name: Prepare SSM command
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          import base64
+          import json
+          import os
+          from pathlib import Path
+
+          script_path = Path("scripts/deploy-ec2.sh")
+          payload = base64.b64encode(
+              script_path.read_bytes()
+          ).decode("ascii")
+
+          operation = os.environ["OPERATION"]
+          image_repository = os.environ["IMAGE_REPOSITORY"]
+          image_tag = os.environ.get("IMAGE_TAG", "")
+
+          commands = [
+              "set -eu",
+              "install -d -o ec2-user -g ec2-user -m 0755 "
+              "/opt/flask-cicd-aws",
+              f"printf '%s' '{payload}' | "
+              "base64 -d > /tmp/deploy-ec2.sh",
+              "install -m 0755 -o ec2-user -g ec2-user "
+              "/tmp/deploy-ec2.sh "
+              "/opt/flask-cicd-aws/deploy-ec2.sh",
+          ]
+
+          if operation == "deploy":
+              image = f"{image_repository}:{image_tag}"
+              commands.append(
+                  "runuser -u ec2-user -- "
+                  "/opt/flask-cicd-aws/deploy-ec2.sh "
+                  f"deploy '{image}'"
+              )
+          else:
+              commands.append(
+                  "runuser -u ec2-user -- "
+                  "/opt/flask-cicd-aws/deploy-ec2.sh rollback"
+              )
+
+          commands.append(
+              "runuser -u ec2-user -- "
+              "/opt/flask-cicd-aws/deploy-ec2.sh status"
+          )
+
+          parameters = {
+              "commands": commands,
+              "executionTimeout": ["900"],
+          }
+
+          Path("/tmp/ssm-parameters.json").write_text(
+              json.dumps(parameters),
+              encoding="utf-8",
+          )
+
+          print("Prepared SSM command parameters")
+          PY
+
+      - name: Send deployment command
+        id: command
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          COMMAND_ID="$(
+            aws ssm send-command \
+              --instance-ids "$INSTANCE_ID" \
+              --document-name AWS-RunShellScript \
+              --comment "flask-cicd-aws ${OPERATION} from GitHub Actions" \
+              --parameters file:///tmp/ssm-parameters.json \
+              --query 'Command.CommandId' \
+              --output text
+          )"
+
+          echo "Command ID: $COMMAND_ID"
+          echo "command_id=$COMMAND_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for SSM command
+        shell: bash
+        env:
+          COMMAND_ID: ${{ steps.command.outputs.command_id }}
+        run: |
+          set -euo pipefail
+
+          FINAL_STATUS=""
+
+          for attempt in $(seq 1 120); do
+            STATUS="$(
+              aws ssm get-command-invocation \
+                --command-id "$COMMAND_ID" \
+                --instance-id "$INSTANCE_ID" \
+                --query 'Status' \
+                --output text \
+                2>/dev/null \
+                || true
+            )"
+
+            echo "Attempt $attempt: status=${STATUS:-not-ready}"
+
+            case "$STATUS" in
+              Success)
+                FINAL_STATUS="$STATUS"
+                break
+                ;;
+
+              Failed|Cancelled|TimedOut|Cancelling)
+                FINAL_STATUS="$STATUS"
+                break
+                ;;
+
+              *)
+                sleep 5
+                ;;
+            esac
+          done
+
+          printf '\n===== SSM STANDARD OUTPUT =====\n'
+
+          aws ssm get-command-invocation \
+            --command-id "$COMMAND_ID" \
+            --instance-id "$INSTANCE_ID" \
+            --query 'StandardOutputContent' \
+            --output text \
+            || true
+
+          printf '\n===== SSM STANDARD ERROR =====\n'
+
+          aws ssm get-command-invocation \
+            --command-id "$COMMAND_ID" \
+            --instance-id "$INSTANCE_ID" \
+            --query 'StandardErrorContent' \
+            --output text \
+            || true
+
+          echo "Final status: $FINAL_STATUS"
+
+          test "$FINAL_STATUS" = "Success"
+
+      - name: Resolve public endpoint
+        id: runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          PUBLIC_IP="$(
+            aws ec2 describe-instances \
+              --instance-ids "$INSTANCE_ID" \
+              --query \
+                'Reservations[0].Instances[0].PublicIpAddress' \
+              --output text
+          )"
+
+          test -n "$PUBLIC_IP"
+          test "$PUBLIC_IP" != "None"
+
+          echo "public_ip=$PUBLIC_IP" >> "$GITHUB_OUTPUT"
+          echo "Public endpoint: http://$PUBLIC_IP"
+
+      - name: Verify public application
+        shell: bash
+        env:
+          PUBLIC_IP: ${{ steps.runtime.outputs.public_ip }}
+        run: |
+          set -euo pipefail
+
+          READY=false
+
+          for attempt in $(seq 1 30); do
+            if curl -fsS \
+              --connect-timeout 3 \
+              --max-time 6 \
+              "http://$PUBLIC_IP/health" \
+              > /tmp/health.json
+            then
+              READY=true
+              echo "Application reachable on attempt $attempt"
+              break
+            fi
+
+            sleep 2
+          done
+
+          test "$READY" = "true"
+
+          curl -fsS \
+            "http://$PUBLIC_IP/version" \
+            > /tmp/version.json
+
+          curl -fsS \
+            "http://$PUBLIC_IP/metadata" \
+            > /tmp/metadata.json
+
+          echo "Health:"
+          cat /tmp/health.json
+          echo
+
+          echo "Version:"
+          cat /tmp/version.json
+          echo
+
+          echo "Metadata:"
+          cat /tmp/metadata.json
+          echo
+
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          operation = os.environ["OPERATION"]
+          requested_tag = os.environ.get("IMAGE_TAG", "")
+
+          health = json.loads(
+              Path("/tmp/health.json").read_text()
+          )
+
+          version = json.loads(
+              Path("/tmp/version.json").read_text()
+          )
+
+          metadata = json.loads(
+              Path("/tmp/metadata.json").read_text()
+          )
+
+          assert health["status"] == "ok"
+          assert version["version"] == version["image_tag"]
+          assert health["version"] == version["image_tag"]
+
+          assert re.fullmatch(
+              r"sha-[0-9a-f]{7}",
+              version["image_tag"],
+          )
+
+          if operation == "deploy":
+              assert version["image_tag"] == requested_tag
+
+          assert metadata["environment"] == "production"
+          assert metadata["image_tag"] == version["image_tag"]
+          assert metadata["hostname"]
+
+          print(
+              "PASS: public deployment verification succeeded"
+          )
+          PY
+
+      - name: Write deployment summary
+        if: always()
+        shell: bash
+        env:
+          PUBLIC_IP: ${{ steps.runtime.outputs.public_ip }}
+          COMMAND_ID: ${{ steps.command.outputs.command_id }}
+        run: |
+          {
+            echo "## EC2 deployment"
+            echo
+            echo "- Operation: \`$OPERATION\`"
+            echo "- Requested image tag: \`${IMAGE_TAG:-not-applicable}\`"
+            echo "- EC2 instance: \`$INSTANCE_ID\`"
+            echo "- SSM command: \`${COMMAND_ID:-not-created}\`"
+            echo "- Public endpoint: \`http://${PUBLIC_IP:-unresolved}\`"
+          } >> "$GITHUB_STEP_SUMMARY"

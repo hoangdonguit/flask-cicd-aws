@@ -1,0 +1,650 @@
+Deploy through AWS Systems Manager	Set up job	﻿2026-07-18T14:40:15.6385397Z Current runner version: '2.335.1'
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6412603Z ##[group]Runner Image Provisioner
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6413732Z Hosted Compute Agent
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6414381Z Version: 20260707.563
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6415083Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6415913Z Build Date: 2026-07-07T19:33:50Z
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6416635Z Worker ID: {3e8222d9-f427-4126-a4d1-f08ad83224b1}
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6418231Z Azure Region: northcentralus
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6418972Z ##[endgroup]
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6420611Z ##[group]Operating System
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6421365Z Ubuntu
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6422052Z 24.04.4
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6422656Z LTS
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6423206Z ##[endgroup]
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6423887Z ##[group]Runner Image
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6424519Z Image: ubuntu-24.04
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6425148Z Version: 20260714.240.1
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6426408Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260714.240/images/ubuntu/Ubuntu2404-Readme.md
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6428581Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260714.240
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6429634Z ##[endgroup]
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6430907Z ##[group]GITHUB_TOKEN Permissions
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6433116Z Contents: read
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6433892Z Metadata: read
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6434522Z ##[endgroup]
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6436780Z Secret source: Actions
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.6438281Z Prepare workflow directory
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.7154383Z Prepare all required actions
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.7209661Z Getting action download info
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:15.9216222Z Download action repository 'actions/checkout@v7' (SHA:9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0)
+Deploy through AWS Systems Manager	Set up job	2026-07-18T14:40:16.1288604Z Complete job name: Deploy through AWS Systems Manager
+Deploy through AWS Systems Manager	Check out repository	﻿2026-07-18T14:40:16.2026476Z ##[group]Run actions/checkout@v7
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2027404Z with:
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2028262Z   repository: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2031947Z   token: ***
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2032459Z   ssh-strict: true
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2032939Z   ssh-user: git
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2033439Z   persist-credentials: true
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2033972Z   clean: true
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2034457Z   sparse-checkout-cone-mode: true
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2035010Z   fetch-depth: 1
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2035475Z   fetch-tags: false
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2035952Z   show-progress: true
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2036431Z   lfs: false
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2036874Z   submodules: false
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2037354Z   set-safe-directory: true
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2038142Z   allow-unsafe-pr-checkout: false
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2039021Z env:
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2039569Z   AWS_ACCESS_KEY_ID: ***
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2040263Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2046613Z   AWS_SESSION_TOKEN: ***
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2047162Z   AWS_REGION: ***
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2047955Z   AWS_DEFAULT_REGION: ***
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2048543Z   INSTANCE_ID: ***
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2049087Z   IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2049728Z   OPERATION: deploy
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2050225Z   IMAGE_TAG: sha-e390452
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.2050720Z ##[endgroup]
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3028893Z Syncing repository: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3031292Z ##[group]Getting Git version info
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3032744Z Working directory is '/home/runner/work/flask-cicd-aws/flask-cicd-aws'
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3034824Z [command]/usr/bin/git version
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3119153Z git version 2.54.0
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3131723Z ##[endgroup]
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3144150Z Temporarily overriding HOME='/home/runner/work/_temp/8259abc6-1670-43ae-885a-9d06f189dbd3' before making global git config changes
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3146982Z Adding repository directory to the temporary git global config as a safe directory
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3162190Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flask-cicd-aws/flask-cicd-aws
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3212565Z Deleting the contents of '/home/runner/work/flask-cicd-aws/flask-cicd-aws'
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3215866Z ##[group]Determining repository object format
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3217468Z ##[endgroup]
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3219223Z ##[group]Initializing the repository
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3222485Z [command]/usr/bin/git init /home/runner/work/flask-cicd-aws/flask-cicd-aws
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3317903Z hint: Using 'master' as the name for the initial branch. This default branch name
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3319965Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3321700Z hint: to use in all of your new repositories, which will suppress this warning,
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3323259Z hint: call:
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3324196Z hint:
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3325380Z hint: 	git config --global init.defaultBranch <name>
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3326730Z hint:
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3328699Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3330521Z hint: 'development'. The just-created branch can be renamed via this command:
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3331907Z hint:
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3332651Z hint: 	git branch -m <name>
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3333585Z hint:
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3334838Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3336254Z Initialized empty Git repository in /home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3338862Z [command]/usr/bin/git remote add origin https://github.com/hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3389078Z ##[endgroup]
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3389961Z ##[group]Disabling automatic garbage collection
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3400789Z [command]/usr/bin/git config --local gc.auto 0
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3447370Z ##[endgroup]
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3449003Z ##[group]Setting up auth
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3449945Z Removing SSH command configuration
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3454814Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3493598Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3868677Z Removing HTTP extra header
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3875457Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.3915227Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4162536Z Removing includeIf entries pointing to credentials config files
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4168269Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4209679Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4463907Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4522793Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git.path /home/runner/work/_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4562100Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4603950Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4645293Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4692148Z ##[endgroup]
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4693885Z ##[group]Fetching the repository
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:16.4698981Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e390452615379af3390a46600eee3de738f60aff:refs/remotes/origin/main
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2081612Z From https://github.com/hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2083489Z  * [new ref]         e390452615379af3390a46600eee3de738f60aff -> origin/main
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2122127Z [command]/usr/bin/git branch --list --remote origin/main
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2153943Z   origin/main
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2164204Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2190406Z e390452615379af3390a46600eee3de738f60aff
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2196017Z ##[endgroup]
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2198257Z ##[group]Determining the checkout info
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2200563Z ##[endgroup]
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2201539Z [command]/usr/bin/git sparse-checkout disable
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2248412Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2282301Z ##[group]Checking out the ref
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2284833Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2361869Z Switched to a new branch 'main'
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2364990Z branch 'main' set up to track 'origin/main'.
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2375028Z ##[endgroup]
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2433118Z [command]/usr/bin/git log -1 --format=%H
+Deploy through AWS Systems Manager	Check out repository	2026-07-18T14:40:17.2462085Z e390452615379af3390a46600eee3de738f60aff
+Deploy through AWS Systems Manager	Validate deployment request	﻿2026-07-18T14:40:17.2700254Z ##[group]Run set -euo pipefail
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2701882Z ^[[36;1mset -euo pipefail^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2703252Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2704408Z ^[[36;1mrequired_values=(^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2705800Z ^[[36;1m  AWS_ACCESS_KEY_ID^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2707220Z ^[[36;1m  AWS_SECRET_ACCESS_KEY^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2709007Z ^[[36;1m  AWS_SESSION_TOKEN^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2710399Z ^[[36;1m  AWS_REGION^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2711685Z ^[[36;1m  INSTANCE_ID^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2712988Z ^[[36;1m)^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2714111Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2715449Z ^[[36;1mfor variable in "${required_values[@]}"; do^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2717235Z ^[[36;1m  if [ -z "${!variable:-}" ]; then^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2719383Z ^[[36;1m    echo "Missing required GitHub secret: $variable"^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2721137Z ^[[36;1m    exit 1^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2722359Z ^[[36;1m  fi^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2723499Z ^[[36;1mdone^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2724644Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2725832Z ^[[36;1mcase "$OPERATION" in^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2727159Z ^[[36;1m  deploy)^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2728759Z ^[[36;1m    if [[ ! "$IMAGE_TAG" =~ ^sha-[0-9a-f]{7}$ ]]; then^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2730919Z ^[[36;1m      echo "Deploy requires image_tag matching sha-<7 lowercase hex>"^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2732885Z ^[[36;1m      exit 1^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2734077Z ^[[36;1m    fi^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2735186Z ^[[36;1m    ;;^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2736292Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2737440Z ^[[36;1m  rollback)^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2738920Z ^[[36;1m    if [ -n "$IMAGE_TAG" ]; then^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2740590Z ^[[36;1m      echo "image_tag is ignored for rollback"^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2742191Z ^[[36;1m    fi^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2743294Z ^[[36;1m    ;;^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2744380Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2745411Z ^[[36;1m  *)^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2746692Z ^[[36;1m    echo "Unsupported operation: $OPERATION"^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2748536Z ^[[36;1m    exit 1^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2749737Z ^[[36;1m    ;;^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2750840Z ^[[36;1mesac^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2751902Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2753017Z ^[[36;1mecho "Operation: $OPERATION"^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2754632Z ^[[36;1mecho "Instance ID: $INSTANCE_ID"^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2756144Z ^[[36;1mecho "Region: $AWS_REGION"^[[0m
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2840737Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2842516Z env:
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2844139Z   AWS_ACCESS_KEY_ID: ***
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2845812Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2864971Z   AWS_SESSION_TOKEN: ***
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2866261Z   AWS_REGION: ***
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2867528Z   AWS_DEFAULT_REGION: ***
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2868991Z   INSTANCE_ID: ***
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2870290Z   IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2871848Z   OPERATION: deploy
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2873006Z   IMAGE_TAG: sha-e390452
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2874216Z ##[endgroup]
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2991921Z Operation: deploy
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2994244Z Instance ID: ***
+Deploy through AWS Systems Manager	Validate deployment request	2026-07-18T14:40:17.2995652Z Region: ***
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	﻿2026-07-18T14:40:17.3140984Z ##[group]Run set -euo pipefail
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3143157Z ^[[36;1mset -euo pipefail^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3145073Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3146782Z ^[[36;1maws sts get-caller-identity \^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3149261Z ^[[36;1m  --query '{^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3151156Z ^[[36;1m    Account:Account,^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3152647Z ^[[36;1m    Arn:Arn^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3153868Z ^[[36;1m  }' \^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3155009Z ^[[36;1m  --output table^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3156226Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3157305Z ^[[36;1mSSM_STATUS="$(^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3159186Z ^[[36;1m  aws ssm describe-instance-information \^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3161063Z ^[[36;1m    --filters "Key=InstanceIds,Values=$INSTANCE_ID" \^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3163050Z ^[[36;1m    --query 'InstanceInformationList[0].PingStatus' \^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3164767Z ^[[36;1m    --output text^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3166024Z ^[[36;1m)"^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3167094Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3168464Z ^[[36;1mecho "SSM status: $SSM_STATUS"^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3169978Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3171125Z ^[[36;1mtest "$SSM_STATUS" = "Online"^[[0m
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3233915Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3235767Z env:
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3237127Z   AWS_ACCESS_KEY_ID: ***
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3239282Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3257511Z   AWS_SESSION_TOKEN: ***
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3259067Z   AWS_REGION: ***
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3260302Z   AWS_DEFAULT_REGION: ***
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3261607Z   INSTANCE_ID: ***
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3262903Z   IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3264466Z   OPERATION: deploy
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3265652Z   IMAGE_TAG: sha-e390452
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:17.3266870Z ##[endgroup]
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:20.5917227Z --------------------------------------------------------------------------------------------------
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:20.5919030Z |                                        GetCallerIdentity                                       |
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:20.5920397Z +---------+--------------------------------------------------------------------------------------+
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:20.5921690Z |  Account|  014104256882                                                                        |
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:20.5927379Z |  Arn    |  arn:aws:sts::014104256882:assumed-role/voclabs/user4612491=23520297@gm.uit.edu.vn   |
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:20.5929010Z +---------+--------------------------------------------------------------------------------------+
+Deploy through AWS Systems Manager	Verify AWS identity and SSM target	2026-07-18T14:40:21.4581737Z SSM status: Online
+Deploy through AWS Systems Manager	Prepare SSM command	﻿2026-07-18T14:40:21.4643776Z ##[group]Run set -euo pipefail
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4644213Z ^[[36;1mset -euo pipefail^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4644514Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4644766Z ^[[36;1mpython3 - <<'PY'^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4645064Z ^[[36;1mimport base64^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4645348Z ^[[36;1mimport json^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4645627Z ^[[36;1mimport os^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4645909Z ^[[36;1mfrom pathlib import Path^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4646691Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4646970Z ^[[36;1mscript_path = Path("scripts/deploy-ec2.sh")^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4647325Z ^[[36;1mpayload = base64.b64encode(^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4647614Z ^[[36;1m    script_path.read_bytes()^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4648318Z ^[[36;1m).decode("ascii")^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4648840Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4649074Z ^[[36;1moperation = os.environ["OPERATION"]^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4649438Z ^[[36;1mimage_repository = os.environ["IMAGE_REPOSITORY"]^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4649821Z ^[[36;1mimage_tag = os.environ.get("IMAGE_TAG", "")^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4650164Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4650363Z ^[[36;1mcommands = [^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4650612Z ^[[36;1m    "set -eu",^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4650913Z ^[[36;1m    "install -d -o ec2-user -g ec2-user -m 0755 "^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4651240Z ^[[36;1m    "/opt/flask-cicd-aws",^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4651564Z ^[[36;1m    f"printf '%s' '{payload}' | "^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4651894Z ^[[36;1m    "base64 -d > /tmp/deploy-ec2.sh",^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4652228Z ^[[36;1m    "install -m 0755 -o ec2-user -g ec2-user "^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4652567Z ^[[36;1m    "/tmp/deploy-ec2.sh "^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4652888Z ^[[36;1m    "/opt/flask-cicd-aws/deploy-ec2.sh",^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4653204Z ^[[36;1m]^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4653410Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4653625Z ^[[36;1mif operation == "deploy":^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4653944Z ^[[36;1m    image = f"{image_repository}:{image_tag}"^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4654265Z ^[[36;1m    commands.append(^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4654539Z ^[[36;1m        "runuser -u ec2-user -- "^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4654872Z ^[[36;1m        "/opt/flask-cicd-aws/deploy-ec2.sh "^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4655182Z ^[[36;1m        f"deploy '{image}'"^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4655442Z ^[[36;1m    )^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4655650Z ^[[36;1melse:^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4655857Z ^[[36;1m    commands.append(^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4656117Z ^[[36;1m        "runuser -u ec2-user -- "^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4656448Z ^[[36;1m        "/opt/flask-cicd-aws/deploy-ec2.sh rollback"^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4656762Z ^[[36;1m    )^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4656958Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4657157Z ^[[36;1mcommands.append(^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4657412Z ^[[36;1m    "runuser -u ec2-user -- "^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4658254Z ^[[36;1m    "/opt/flask-cicd-aws/deploy-ec2.sh status"^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4658617Z ^[[36;1m)^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4658807Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4659012Z ^[[36;1mparameters = {^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4659251Z ^[[36;1m    "commands": commands,^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4659529Z ^[[36;1m    "executionTimeout": ["900"],^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4659802Z ^[[36;1m}^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4659989Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4660237Z ^[[36;1mPath("/tmp/ssm-parameters.json").write_text(^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4660572Z ^[[36;1m    json.dumps(parameters),^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4660852Z ^[[36;1m    encoding="utf-8",^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4661101Z ^[[36;1m)^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4661299Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4661533Z ^[[36;1mprint("Prepared SSM command parameters")^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4661835Z ^[[36;1mPY^[[0m
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4722803Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4723202Z env:
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4723546Z   AWS_ACCESS_KEY_ID: ***
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4723905Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4728269Z   AWS_SESSION_TOKEN: ***
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4728567Z   AWS_REGION: ***
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4728824Z   AWS_DEFAULT_REGION: ***
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4729089Z   INSTANCE_ID: ***
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4729586Z   IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4729911Z   OPERATION: deploy
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4730135Z   IMAGE_TAG: sha-e390452
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.4730368Z ##[endgroup]
+Deploy through AWS Systems Manager	Prepare SSM command	2026-07-18T14:40:21.5047411Z Prepared SSM command parameters
+Deploy through AWS Systems Manager	Send deployment command	﻿2026-07-18T14:40:21.5121684Z ##[group]Run set -euo pipefail
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5122068Z ^[[36;1mset -euo pipefail^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5122315Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5122525Z ^[[36;1mCOMMAND_ID="$(^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5122776Z ^[[36;1m  aws ssm send-command \^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5123088Z ^[[36;1m    --instance-ids "$INSTANCE_ID" \^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5123443Z ^[[36;1m    --document-name AWS-RunShellScript \^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5123867Z ^[[36;1m    --comment "flask-cicd-aws ${OPERATION} from GitHub Actions" \^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5124519Z ^[[36;1m    --parameters file:///tmp/ssm-parameters.json \^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5124918Z ^[[36;1m    --query 'Command.CommandId' \^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5125221Z ^[[36;1m    --output text^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5125466Z ^[[36;1m)"^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5125660Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5125874Z ^[[36;1mecho "Command ID: $COMMAND_ID"^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5126234Z ^[[36;1mecho "command_id=$COMMAND_ID" >> "$GITHUB_OUTPUT"^[[0m
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5186360Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5186786Z env:
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5187117Z   AWS_ACCESS_KEY_ID: ***
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5187467Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5191775Z   AWS_SESSION_TOKEN: ***
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5192049Z   AWS_REGION: ***
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5192289Z   AWS_DEFAULT_REGION: ***
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5192550Z   INSTANCE_ID: ***
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5192809Z   IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5193143Z   OPERATION: deploy
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5193366Z   IMAGE_TAG: sha-e390452
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:21.5193595Z ##[endgroup]
+Deploy through AWS Systems Manager	Send deployment command	2026-07-18T14:40:22.3365040Z Command ID: a8dba106-71a0-45f3-ab8b-017ee8ce80b0
+Deploy through AWS Systems Manager	Wait for SSM command	﻿2026-07-18T14:40:22.3417071Z ##[group]Run set -euo pipefail
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3417424Z ^[[36;1mset -euo pipefail^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3417927Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3418245Z ^[[36;1mFINAL_STATUS=""^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3418477Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3418683Z ^[[36;1mfor attempt in $(seq 1 120); do^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3418963Z ^[[36;1m  STATUS="$(^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3419220Z ^[[36;1m    aws ssm get-command-invocation \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3419549Z ^[[36;1m      --command-id "$COMMAND_ID" \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3419847Z ^[[36;1m      --instance-id "$INSTANCE_ID" \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3420131Z ^[[36;1m      --query 'Status' \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3420393Z ^[[36;1m      --output text \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3420637Z ^[[36;1m      2>/dev/null \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3420893Z ^[[36;1m      || true^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3421117Z ^[[36;1m  )"^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3421301Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3421557Z ^[[36;1m  echo "Attempt $attempt: status=${STATUS:-not-ready}"^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3421926Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3422119Z ^[[36;1m  case "$STATUS" in^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3422362Z ^[[36;1m    Success)^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3422593Z ^[[36;1m      FINAL_STATUS="$STATUS"^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3422852Z ^[[36;1m      break^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3423066Z ^[[36;1m      ;;^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3423259Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3423484Z ^[[36;1m    Failed|Cancelled|TimedOut|Cancelling)^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3423799Z ^[[36;1m      FINAL_STATUS="$STATUS"^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3424054Z ^[[36;1m      break^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3424263Z ^[[36;1m      ;;^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3424453Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3424630Z ^[[36;1m    *)^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3424837Z ^[[36;1m      sleep 5^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3425056Z ^[[36;1m      ;;^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3425249Z ^[[36;1m  esac^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3425444Z ^[[36;1mdone^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3425634Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3425868Z ^[[36;1mprintf '\n===== SSM STANDARD OUTPUT =====\n'^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3426174Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3426384Z ^[[36;1maws ssm get-command-invocation \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3426683Z ^[[36;1m  --command-id "$COMMAND_ID" \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3426992Z ^[[36;1m  --instance-id "$INSTANCE_ID" \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3427296Z ^[[36;1m  --query 'StandardOutputContent' \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3427592Z ^[[36;1m  --output text \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3428066Z ^[[36;1m  || true^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3428273Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3428501Z ^[[36;1mprintf '\n===== SSM STANDARD ERROR =====\n'^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3428800Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3429006Z ^[[36;1maws ssm get-command-invocation \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3429300Z ^[[36;1m  --command-id "$COMMAND_ID" \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3429627Z ^[[36;1m  --instance-id "$INSTANCE_ID" \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3430114Z ^[[36;1m  --query 'StandardErrorContent' \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3430408Z ^[[36;1m  --output text \^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3430640Z ^[[36;1m  || true^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3430838Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3431056Z ^[[36;1mecho "Final status: $FINAL_STATUS"^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3431317Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3431515Z ^[[36;1mtest "$FINAL_STATUS" = "Success"^[[0m
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3489127Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3489482Z env:
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3489980Z   AWS_ACCESS_KEY_ID: ***
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3490344Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3494378Z   AWS_SESSION_TOKEN: ***
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3494649Z   AWS_REGION: ***
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3494875Z   AWS_DEFAULT_REGION: ***
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3495137Z   INSTANCE_ID: ***
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3495396Z   IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3495706Z   OPERATION: deploy
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3495931Z   IMAGE_TAG: sha-e390452
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3496197Z   COMMAND_ID: a8dba106-71a0-45f3-ab8b-017ee8ce80b0
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:22.3496503Z ##[endgroup]
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:23.0957142Z Attempt 1: status=InProgress
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:28.8259883Z Attempt 2: status=InProgress
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:34.6018238Z Attempt 3: status=Success
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:34.6018862Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:34.6019180Z ===== SSM STANDARD OUTPUT =====
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2617329Z [2026-07-18T14:40:22Z] Target image: hoangdonguit/flask-cicd-aws:sha-e390452
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2618587Z [2026-07-18T14:40:22Z] Current image: hoangdonguit/flask-cicd-aws:sha-5edfc15
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2619352Z sha-e390452: Pulling from hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2620021Z 062e450697fa: Already exists
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2620451Z 98db2485a0d0: Already exists
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2620846Z 48347b15c85f: Already exists
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2621261Z fd079632edc0: Already exists
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2621668Z 84a155a538f1: Pulling fs layer
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2622118Z 5d71708fe9b4: Pulling fs layer
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2622540Z cbb9b2fe4c54: Pulling fs layer
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2622941Z 3aa13fa5f6cd: Pulling fs layer
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2623377Z 0902ef2cc2b7: Pulling fs layer
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2623781Z 3aa13fa5f6cd: Waiting
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2624138Z 0902ef2cc2b7: Waiting
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2624511Z cbb9b2fe4c54: Verifying Checksum
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2624962Z cbb9b2fe4c54: Download complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2625387Z 5d71708fe9b4: Verifying Checksum
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2625801Z 5d71708fe9b4: Download complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2626205Z 84a155a538f1: Verifying Checksum
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2626610Z 84a155a538f1: Download complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2627009Z 84a155a538f1: Pull complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2627423Z 0902ef2cc2b7: Verifying Checksum
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2628046Z 0902ef2cc2b7: Download complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2628456Z 5d71708fe9b4: Pull complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2628869Z cbb9b2fe4c54: Pull complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2629295Z 3aa13fa5f6cd: Verifying Checksum
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2629708Z 3aa13fa5f6cd: Download complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2630128Z 3aa13fa5f6cd: Pull complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2630529Z 0902ef2cc2b7: Pull complete
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2631223Z Digest: sha256:30d84bce5c07c32ba40e37a545b65895fd8c052f4f755f646ead38d3ee68900f
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2632092Z Status: Downloaded newer image for hoangdonguit/flask-cicd-aws:sha-e390452
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2632800Z docker.io/hoangdonguit/flask-cicd-aws:sha-e390452
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2633473Z [2026-07-18T14:40:23Z] Starting candidate container on loopback port 5001
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2634135Z [2026-07-18T14:40:26Z] Application healthy on attempt 2
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2634726Z {"app":"flask-cicd-aws","status":"ok","version":"sha-e390452"}
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2635113Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2635410Z {"app":"flask-cicd-aws","image_tag":"sha-e390452","version":"sha-e390452"}
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2635837Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2636124Z [2026-07-18T14:40:26Z] Candidate passed. Promoting image to production
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2637234Z [2026-07-18T14:40:29Z] Application healthy on attempt 2
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2638133Z {"app":"flask-cicd-aws","status":"ok","version":"sha-e390452"}
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2638534Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2638843Z {"app":"flask-cicd-aws","image_tag":"sha-e390452","version":"sha-e390452"}
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2639288Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2639507Z [2026-07-18T14:40:29Z] Deployment completed successfully
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2639972Z === Container ===
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2640790Z name=flask-cicd-aws image=hoangdonguit/flask-cicd-aws:sha-e390452 status=Up 2 seconds (health: starting) ports=0.0.0.0:80->5000/tcp
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2641585Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2641737Z === Current image ===
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2642104Z hoangdonguit/flask-cicd-aws:sha-e390452
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2642412Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2642551Z === Previous image ===
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2642925Z hoangdonguit/flask-cicd-aws:sha-5edfc15
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2643216Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2643364Z === Recent deployment history ===
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2644039Z 2026-07-18T14:14:46Z action=deploy image=hoangdonguit/flask-cicd-aws:sha-5edfc15 previous=none
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2645320Z 2026-07-18T14:40:29Z action=deploy image=hoangdonguit/flask-cicd-aws:sha-e390452 previous=hoangdonguit/flask-cicd-aws:sha-5edfc15
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.2646374Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.3434977Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:35.3435574Z ===== SSM STANDARD ERROR =====
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:36.0298491Z
+Deploy through AWS Systems Manager	Wait for SSM command	2026-07-18T14:40:36.1181461Z Final status: Success
+Deploy through AWS Systems Manager	Resolve public endpoint	﻿2026-07-18T14:40:36.1212149Z ##[group]Run set -euo pipefail
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1212507Z ^[[36;1mset -euo pipefail^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1212745Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1212942Z ^[[36;1mPUBLIC_IP="$(^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1213200Z ^[[36;1m  aws ec2 describe-instances \^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1213508Z ^[[36;1m    --instance-ids "$INSTANCE_ID" \^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1213795Z ^[[36;1m    --query \^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1214090Z ^[[36;1m      'Reservations[0].Instances[0].PublicIpAddress' \^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1214463Z ^[[36;1m    --output text^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1214696Z ^[[36;1m)"^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1214888Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1215085Z ^[[36;1mtest -n "$PUBLIC_IP"^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1215344Z ^[[36;1mtest "$PUBLIC_IP" != "None"^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1215606Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1215861Z ^[[36;1mecho "public_ip=$PUBLIC_IP" >> "$GITHUB_OUTPUT"^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1216263Z ^[[36;1mecho "Public endpoint: http://$PUBLIC_IP"^[[0m
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1273728Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1274121Z env:
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1274465Z   AWS_ACCESS_KEY_ID: ***
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1274823Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1279160Z   AWS_SESSION_TOKEN: ***
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1279436Z   AWS_REGION: ***
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1279674Z   AWS_DEFAULT_REGION: ***
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1279946Z   INSTANCE_ID: ***
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1280196Z   IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1280519Z   OPERATION: deploy
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1280742Z   IMAGE_TAG: sha-e390452
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:36.1280982Z ##[endgroup]
+Deploy through AWS Systems Manager	Resolve public endpoint	2026-07-18T14:40:37.1923942Z Public endpoint: http://32.192.209.173
+Deploy through AWS Systems Manager	Verify public application	﻿2026-07-18T14:40:37.1956067Z ##[group]Run set -euo pipefail
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1956444Z ^[[36;1mset -euo pipefail^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1956687Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1956884Z ^[[36;1mREADY=false^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1957111Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1957316Z ^[[36;1mfor attempt in $(seq 1 30); do^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1957595Z ^[[36;1m  if curl -fsS \^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1958226Z ^[[36;1m    --connect-timeout 3 \^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1958507Z ^[[36;1m    --max-time 6 \^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1958782Z ^[[36;1m    "http://$PUBLIC_IP/health" \^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1959084Z ^[[36;1m    > /tmp/health.json^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1959327Z ^[[36;1m  then^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1959533Z ^[[36;1m    READY=true^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1959833Z ^[[36;1m    echo "Application reachable on attempt $attempt"^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1960344Z ^[[36;1m    break^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1960552Z ^[[36;1m  fi^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1960745Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1960930Z ^[[36;1m  sleep 2^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1961130Z ^[[36;1mdone^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1961345Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1961540Z ^[[36;1mtest "$READY" = "true"^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1961780Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1961965Z ^[[36;1mcurl -fsS \^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1962239Z ^[[36;1m  "http://$PUBLIC_IP/version" \^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1962546Z ^[[36;1m  > /tmp/version.json^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1962784Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1963001Z ^[[36;1mcurl -fsS \^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1963271Z ^[[36;1m  "http://$PUBLIC_IP/metadata" \^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1963556Z ^[[36;1m  > /tmp/metadata.json^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1963809Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1964028Z ^[[36;1mecho "Health:"^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1964263Z ^[[36;1mcat /tmp/health.json^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1964509Z ^[[36;1mecho^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1964700Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1964896Z ^[[36;1mecho "Version:"^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1965141Z ^[[36;1mcat /tmp/version.json^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1965377Z ^[[36;1mecho^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1965565Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1965768Z ^[[36;1mecho "Metadata:"^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1966009Z ^[[36;1mcat /tmp/metadata.json^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1966262Z ^[[36;1mecho^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1966458Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1966655Z ^[[36;1mpython3 - <<'PY'^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1966899Z ^[[36;1mimport json^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1967126Z ^[[36;1mimport os^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1967354Z ^[[36;1mimport re^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1967577Z ^[[36;1mfrom pathlib import Path^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1968076Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1968322Z ^[[36;1moperation = os.environ["OPERATION"]^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1968692Z ^[[36;1mrequested_tag = os.environ.get("IMAGE_TAG", "")^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1969028Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1969228Z ^[[36;1mhealth = json.loads(^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1969519Z ^[[36;1m    Path("/tmp/health.json").read_text()^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1969824Z ^[[36;1m)^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1970007Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1970200Z ^[[36;1mversion = json.loads(^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1970492Z ^[[36;1m    Path("/tmp/version.json").read_text()^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1970778Z ^[[36;1m)^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1970960Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1971160Z ^[[36;1mmetadata = json.loads(^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1971442Z ^[[36;1m    Path("/tmp/metadata.json").read_text()^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1971731Z ^[[36;1m)^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1971907Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1972107Z ^[[36;1massert health["status"] == "ok"^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1972465Z ^[[36;1massert version["version"] == version["image_tag"]^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1972843Z ^[[36;1massert health["version"] == version["image_tag"]^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1973149Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1973351Z ^[[36;1massert re.fullmatch(^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1973599Z ^[[36;1m    r"sha-[0-9a-f]{7}",^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1973856Z ^[[36;1m    version["image_tag"],^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1974106Z ^[[36;1m)^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1974285Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1974479Z ^[[36;1mif operation == "deploy":^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1974970Z ^[[36;1m    assert version["image_tag"] == requested_tag^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1975270Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1975512Z ^[[36;1massert metadata["environment"] == "production"^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1975900Z ^[[36;1massert metadata["image_tag"] == version["image_tag"]^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1976243Z ^[[36;1massert metadata["hostname"]^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1976501Z ^[[36;1m^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1976684Z ^[[36;1mprint(^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1976952Z ^[[36;1m    "PASS: public deployment verification succeeded"^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1977270Z ^[[36;1m)^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.1977466Z ^[[36;1mPY^[[0m
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2034379Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2034743Z env:
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2035071Z   AWS_ACCESS_KEY_ID: ***
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2035571Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2039999Z   AWS_SESSION_TOKEN: ***
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2040284Z   AWS_REGION: ***
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2040520Z   AWS_DEFAULT_REGION: ***
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2040785Z   INSTANCE_ID: ***
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2041033Z   IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2041342Z   OPERATION: deploy
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2041570Z   IMAGE_TAG: sha-e390452
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2041811Z   PUBLIC_IP: 32.192.209.173
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2042052Z ##[endgroup]
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.2732056Z Application reachable on attempt 1
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3708517Z Health:
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3717888Z {"app":"flask-cicd-aws","status":"ok","version":"sha-e390452"}
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3719328Z
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3719931Z Version:
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3734401Z {"app":"flask-cicd-aws","image_tag":"sha-e390452","version":"sha-e390452"}
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3734966Z
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3735123Z Metadata:
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3742747Z {"app":"flask-cicd-aws","deploy_time":"2026-07-18T14:40:27Z","environment":"production","hostname":"acc5aea9839a","image_tag":"sha-e390452","version":"sha-e390452"}
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3743864Z
+Deploy through AWS Systems Manager	Verify public application	2026-07-18T14:40:37.3985524Z PASS: public deployment verification succeeded
+Deploy through AWS Systems Manager	Write deployment summary	﻿2026-07-18T14:40:37.4061365Z ##[group]Run {
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4061645Z ^[[36;1m{^[[0m
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4061864Z ^[[36;1m  echo "## EC2 deployment"^[[0m
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4062128Z ^[[36;1m  echo^[[0m
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4062375Z ^[[36;1m  echo "- Operation: \`$OPERATION\`"^[[0m
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4062772Z ^[[36;1m  echo "- Requested image tag: \`${IMAGE_TAG:-not-applicable}\`"^[[0m
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4063182Z ^[[36;1m  echo "- EC2 instance: \`$INSTANCE_ID\`"^[[0m
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4063576Z ^[[36;1m  echo "- SSM command: \`${COMMAND_ID:-not-created}\`"^[[0m
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4064033Z ^[[36;1m  echo "- Public endpoint: \`http://${PUBLIC_IP:-unresolved}\`"^[[0m
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4064428Z ^[[36;1m} >> "$GITHUB_STEP_SUMMARY"^[[0m
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4121644Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4122031Z env:
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4122306Z   AWS_ACCESS_KEY_ID: ***
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4122644Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4126690Z   AWS_SESSION_TOKEN: ***
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4126945Z   AWS_REGION: ***
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4127231Z   AWS_DEFAULT_REGION: ***
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4127494Z   INSTANCE_ID: ***
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4127979Z   IMAGE_REPOSITORY: hoangdonguit/flask-cicd-aws
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4128297Z   OPERATION: deploy
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4128529Z   IMAGE_TAG: sha-e390452
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4128767Z   PUBLIC_IP: 32.192.209.173
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4129050Z   COMMAND_ID: a8dba106-71a0-45f3-ab8b-017ee8ce80b0
+Deploy through AWS Systems Manager	Write deployment summary	2026-07-18T14:40:37.4129374Z ##[endgroup]
+Deploy through AWS Systems Manager	Post Check out repository	﻿2026-07-18T14:40:37.4322902Z Post job cleanup.
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5173543Z [command]/usr/bin/git version
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5217288Z git version 2.54.0
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5260532Z Temporarily overriding HOME='/home/runner/work/_temp/d17ea4dd-382e-43c1-9013-d0f780ba8fed' before making global git config changes
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5262086Z Adding repository directory to the temporary git global config as a safe directory
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5265898Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flask-cicd-aws/flask-cicd-aws
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5306933Z Removing SSH command configuration
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5314660Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5364107Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5604013Z Removing HTTP extra header
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5610846Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5648804Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5902673Z Removing includeIf entries pointing to credentials config files
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5910800Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5944566Z includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git.path
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5945774Z includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/worktrees/*.path
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5946557Z includeif.gitdir:/github/workspace/.git.path
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5947059Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5954449Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git.path
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5981524Z /home/runner/work/_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.5998949Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git.path /home/runner/work/_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6043149Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/worktrees/*.path
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6072571Z /home/runner/work/_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6082758Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/flask-cicd-aws/flask-cicd-aws/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6134414Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6165391Z /github/runner_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6173474Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6209013Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6233944Z /github/runner_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6241558Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6276028Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy through AWS Systems Manager	Post Check out repository	2026-07-18T14:40:37.6496309Z Removing credentials config '/home/runner/work/_temp/git-credentials-810f6793-cfbe-4048-bef4-03e1f1943134.config'
+Deploy through AWS Systems Manager	Complete job	﻿2026-07-18T14:40:37.6633203Z Cleaning up orphan processes

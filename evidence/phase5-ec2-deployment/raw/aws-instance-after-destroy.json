@@ -1,0 +1,7 @@
+{
+    "InstanceId": "i-0df673da1758aaca4",
+    "State": "terminated",
+    "InstanceType": "t3.micro",
+    "PublicIP": null,
+    "PrivateIP": null
+}

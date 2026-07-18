@@ -2,7 +2,7 @@
 
 A production-oriented DevOps portfolio lab for building, scanning, publishing and deploying a containerized Flask application to an ephemeral AWS EC2 environment.
 
-> **Current status:** Phase 4 is complete: automated quality gates, the secure image supply chain, and Terraform-based AWS EC2 provisioning have been verified. Automated deployment, health checks, and rollback remain under development.
+> **Current status:** Phases 1–5 are complete. The project now demonstrates application and container hardening, automated CI, a secure immutable image supply chain, Terraform-based AWS EC2 provisioning, GitHub Actions deployment through AWS Systems Manager, verified rollback, and Terraform lifecycle cleanup.
 
 ## Recruiter Summary
 
@@ -15,7 +15,7 @@ The target workflow covers:
 - immutable Docker image tags;
 - Docker Hub image publication;
 - AWS EC2 provisioning with Terraform;
-- SSH-based application deployment;
+- AWS Systems Manager-based application deployment;
 - post-deployment health checks;
 - rollback using a previously published image tag.
 
@@ -75,7 +75,7 @@ It differs from a Kubernetes GitOps project because the deployment target is a s
         Terraform-managed EC2
                 |
                 v
-       SSH image deployment
+       AWS SSM image deployment
                 |
                 v
        Post-deployment health check
@@ -309,6 +309,7 @@ Current evidence:
 - [Phase 2 — Automated tests and CI quality gates](docs/evidence/phase2-ci-quality-gates.md)
 - [Phase 3 — Secure Docker image supply chain](docs/evidence/phase3-image-supply-chain.md)
 - [Phase 4 — Terraform EC2 provisioning](docs/evidence/phase4-terraform-ec2.md)
+- [Phase 5 — EC2 deployment, rollback, and cleanup](docs/evidence/phase5-ec2-deployment-rollback.md)
 
 Portfolio screenshots will be stored under:
 
@@ -332,6 +333,9 @@ Portfolio screenshots will be stored under:
 - [x] Add Trivy image scanning
 - [x] Publish immutable `sha-<short-sha>` image tags
 - [x] Provision AWS EC2 with Terraform
+- [x] Deploy immutable Docker images through GitHub Actions and AWS SSM
+- [x] Verify automated rollback to a previous immutable image
+- [x] Destroy project infrastructure through Terraform
 - [ ] Add repository-managed deployment scripts
 - [ ] Add a manual GitHub Actions deployment workflow
 - [ ] Verify deployment health remotely
@@ -357,20 +361,22 @@ Current published verification tag:
 
     hoangdonguit/flask-cicd-aws:sha-5edfc15
 
-## Planned GitHub Actions Secrets
+## GitHub Actions Secrets
 
-The final workflows are expected to use:
+The deployment workflow used the following temporary repository secrets:
 
 | Secret | Purpose |
 |---|---|
+| `AWS_ACCESS_KEY_ID` | Temporary AWS Academy access key |
+| `AWS_SECRET_ACCESS_KEY` | Temporary AWS Academy secret key |
+| `AWS_SESSION_TOKEN` | Temporary AWS Academy session token |
+| `AWS_REGION` | AWS deployment region |
+| `AWS_EC2_INSTANCE_ID` | Terraform-managed deployment target |
 | `DOCKERHUB_USERNAME` | Docker Hub account name |
-| `DOCKERHUB_TOKEN` | Docker Hub access token |
-| `EC2_HOST` | Temporary EC2 public IP or DNS name |
-| `EC2_USER` | EC2 SSH user |
-| `EC2_SSH_KEY` | Temporary SSH private key |
-| `EC2_PORT` | Optional SSH port |
+| `DOCKERHUB_TOKEN` | Docker Hub publishing token |
 
-No secret value is stored in this repository.
+The temporary AWS secrets are removed after Terraform cleanup. Docker Hub
+publishing secrets remain configured for the image supply-chain workflow.
 
 ## AWS Academy Lab Limitation
 
@@ -386,21 +392,17 @@ Consequences include:
 
 This constraint is part of the project design rather than being hidden.
 
-## Planned Rollback Strategy
+## Verified Rollback Strategy
 
-Each successful build will publish an immutable image tag:
+Deployment and rollback use explicit immutable image tags:
 
     hoangdonguit/flask-cicd-aws:sha-<short-sha>
 
-Deployment and rollback will reference an explicit image tag.
+The verified test deployed `sha-e390452` and rolled production back to
+`sha-5edfc15`.
 
-Example target rollback command:
-
-~~~bash
-./scripts/rollback.sh sha-previous
-~~~
-
-Rollback will therefore replace the running container with a previously verified image rather than relying on the mutable `latest` tag.
+The rollback workflow uses the previous verified image recorded by the
+deployment script. It does not rely on the mutable `latest` tag.
 
 ## Security Notes
 
@@ -434,6 +436,6 @@ The project does not currently claim:
 
 ## Target CV Bullet
 
-> Implemented an end-to-end CI/CD and IaC lab for a Dockerized Flask application on AWS EC2 using GitHub Actions, Docker Hub and Terraform, with automated tests, dependency and image scanning, immutable image tags, SSH-based deployment, post-deployment health checks and rollback using versioned Docker images.
+> Implemented an end-to-end CI/CD and IaC lab for a Dockerized Flask application on AWS EC2 using GitHub Actions, Docker Hub and Terraform, with automated tests, dependency and image scanning, immutable image tags, AWS Systems Manager-based deployment, post-deployment health checks and rollback using versioned Docker images.
 
-CI, image supply chain, and Terraform provisioning evidence are complete. Use this full bullet only after automated deployment and rollback evidence has also been completed.
+All referenced CI, image supply chain, Terraform provisioning, deployment, rollback, and cleanup evidence has been completed.

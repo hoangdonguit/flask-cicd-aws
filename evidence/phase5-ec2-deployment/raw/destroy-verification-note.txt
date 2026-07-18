@@ -1,0 +1,11 @@
+The initial verification script expected this Terraform message:
+
+    Destroy complete! Resources: 2 destroyed.
+
+The installed Terraform version instead returned:
+
+    Apply complete! Resources: 0 added, 0 changed, 2 destroyed.
+
+The infrastructure cleanup itself succeeded. Only the exact-string grep
+verification failed, causing the strict-mode shell block to stop before the
+remaining post-destroy checks.

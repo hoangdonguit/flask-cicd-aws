@@ -1,0 +1,237 @@
+data.aws_vpc.default: Reading...
+data.aws_ami.amazon_linux_2023: Reading...
+data.aws_ami.amazon_linux_2023: Read complete after 3s [id=ami-0fd6240f599091088]
+data.aws_vpc.default: Read complete after 4s [id=vpc-0277e70bbb2a456f0]
+data.aws_subnets.default: Reading...
+aws_security_group.app: Refreshing state... [id=sg-04a393a42ca947d5e]
+data.aws_subnets.default: Read complete after 0s [id=us-east-1]
+aws_instance.app: Refreshing state... [id=i-0df673da1758aaca4]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_instance.app will be destroyed
+  - resource "aws_instance" "app" {
+      - ami                                  = "ami-0fd6240f599091088" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:014104256882:instance/i-0df673da1758aaca4" -> null
+      - associate_public_ip_address          = true -> null
+      - availability_zone                    = "us-east-1d" -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - ebs_optimized                        = false -> null
+      - force_destroy                        = false -> null
+      - get_password_data                    = false -> null
+      - hibernation                          = false -> null
+      - iam_instance_profile                 = "LabInstanceProfile" -> null
+      - id                                   = "i-0df673da1758aaca4" -> null
+      - instance_initiated_shutdown_behavior = "stop" -> null
+      - instance_state                       = "running" -> null
+      - instance_type                        = "t3.micro" -> null
+      - ipv6_address_count                   = 0 -> null
+      - ipv6_addresses                       = [] -> null
+      - key_name                             = "vockey" -> null
+      - monitoring                           = false -> null
+      - placement_partition_number           = 0 -> null
+      - primary_network_interface_id         = "eni-04961e61a3f8967d3" -> null
+      - private_dns                          = "ip-172-31-35-18.ec2.internal" -> null
+      - private_ip                           = "172.31.35.18" -> null
+      - public_dns                           = "ec2-32-192-209-173.compute-1.amazonaws.com" -> null
+      - public_ip                            = "32.192.209.173" -> null
+      - region                               = "us-east-1" -> null
+      - secondary_private_ips                = [] -> null
+      - security_groups                      = [
+          - "flask-cicd-aws-a7718b0077457945bf7a3acc87",
+        ] -> null
+      - source_dest_check                    = true -> null
+      - subnet_id                            = "subnet-025c958da87196336" -> null
+      - tags                                 = {
+          - "Name" = "flask-cicd-aws-ec2"
+        } -> null
+      - tags_all                             = {
+          - "Environment" = "academy-sandbox"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "flask-cicd-aws-ec2"
+          - "Project"     = "flask-cicd-aws"
+          - "Repository"  = "flask-cicd-aws"
+        } -> null
+      - tenancy                              = "default" -> null
+      - user_data                            = <<-EOT
+            #!/bin/bash
+
+            set -euxo pipefail
+
+            # Amazon Linux 2023 already provides curl through curl-minimal.
+            # Installing the full curl package would conflict with curl-minimal.
+            dnf install -y docker jq
+
+            systemctl enable --now docker
+            usermod -aG docker ec2-user
+
+            install \
+              -d \
+              -o ec2-user \
+              -g ec2-user \
+              -m 0755 \
+              /opt/flask-cicd-aws
+
+            systemctl enable --now amazon-ssm-agent || true
+
+            cat > /etc/motd <<'MOTD'
+            Flask CI/CD AWS lab
+            Provisioned by Terraform
+            Docker bootstrap completed through EC2 user data
+            MOTD
+        EOT -> null
+      - user_data_replace_on_change          = true -> null
+      - vpc_security_group_ids               = [
+          - "sg-04a393a42ca947d5e",
+        ] -> null
+        # (7 unchanged attributes hidden)
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      - cpu_options {
+          - core_count            = 1 -> null
+          - threads_per_core      = 2 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - credit_specification {
+          - cpu_credits = "unlimited" -> null
+        }
+
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 1 -> null
+          - http_tokens                 = "required" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      - primary_network_interface {
+          - delete_on_termination = true -> null
+          - network_interface_id  = "eni-04961e61a3f8967d3" -> null
+        }
+
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/xvda" -> null
+          - encrypted             = false -> null
+          - iops                  = 100 -> null
+          - tags                  = {} -> null
+          - tags_all              = {
+              - "Environment" = "academy-sandbox"
+              - "ManagedBy"   = "Terraform"
+              - "Project"     = "flask-cicd-aws"
+              - "Repository"  = "flask-cicd-aws"
+            } -> null
+          - throughput            = 0 -> null
+          - volume_id             = "vol-0465f5194c56a2c8c" -> null
+          - volume_size           = 8 -> null
+          - volume_type           = "gp2" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_security_group.app will be destroyed
+  - resource "aws_security_group" "app" {
+      - arn                    = "arn:aws:ec2:us-east-1:014104256882:security-group/sg-04a393a42ca947d5e" -> null
+      - description            = "Network access for the Flask CI/CD AWS lab" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "Allow outbound package and registry access"
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+            },
+        ] -> null
+      - id                     = "sg-04a393a42ca947d5e" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "Public HTTP access to the deployed Flask application"
+              - from_port        = 80
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 80
+            },
+          - {
+              - cidr_blocks      = [
+                  - "171.253.136.148/32",
+                ]
+              - description      = "SSH administration from the configured public IP"
+              - from_port        = 22
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 22
+            },
+        ] -> null
+      - name                   = "flask-cicd-aws-a7718b0077457945bf7a3acc87" -> null
+      - name_prefix            = "flask-cicd-aws-" -> null
+      - owner_id               = "014104256882" -> null
+      - region                 = "us-east-1" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Name" = "flask-cicd-aws-sg"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "academy-sandbox"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "flask-cicd-aws-sg"
+          - "Project"     = "flask-cicd-aws"
+          - "Repository"  = "flask-cicd-aws"
+        } -> null
+      - vpc_id                 = "vpc-0277e70bbb2a456f0" -> null
+    }
+
+Plan: 0 to add, 0 to change, 2 to destroy.
+
+Changes to Outputs:
+  - amazon_linux_ami_id = "ami-0fd6240f599091088" -> null
+  - application_url     = "http://32.192.209.173" -> null
+  - instance_id         = "i-0df673da1758aaca4" -> null
+  - public_dns          = "ec2-32-192-209-173.compute-1.amazonaws.com" -> null
+  - public_ip           = "32.192.209.173" -> null
+  - selected_subnet_id  = "subnet-025c958da87196336" -> null
+  - ssh_command         = "ssh -i /path/to/labsuser.pem ec2-user@32.192.209.173" -> null
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: phase5-destroy.tfplan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "phase5-destroy.tfplan"

@@ -1,0 +1,18 @@
+CapturedAtUTC=2026-07-18T14:53:13Z
+
+e390452 (HEAD -> docs/phase5-deployment-rollback-evidence, origin/main, main) Merge pull request #5 from hoangdonguit/feature/phase5-ec2-deployment
+8dc91ea (origin/feature/phase5-ec2-deployment, feature/phase5-ec2-deployment) feat: add SSM-based EC2 deployment and rollback
+a17e172 Merge pull request #4 from hoangdonguit/feature/phase4-terraform-ec2
+55f67a1 (origin/feature/phase4-terraform-ec2, feature/phase4-terraform-ec2) docs: normalize phase 4 evidence formatting
+6fbc0ba docs: record phase 4 Terraform EC2 evidence
+0f18eac fix(infra): resolve Amazon Linux bootstrap conflict
+99cc501 infra: add Terraform EC2 sandbox provisioning
+556e812 Merge pull request #3 from hoangdonguit/docs/phase3-image-supply-chain-evidence
+ff2777a (origin/docs/phase3-image-supply-chain-evidence) ci: avoid publishing images for docs-only changes
+37ef621 docs: record phase 3 image supply chain evidence
+
+data.aws_ami.amazon_linux_2023
+data.aws_subnets.default
+data.aws_vpc.default
+aws_instance.app
+aws_security_group.app

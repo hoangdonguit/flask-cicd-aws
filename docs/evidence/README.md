@@ -23,7 +23,7 @@ Each evidence document should include:
 - known limitations;
 - a clear claim boundary.
 
-Evidence should summarize important output instead of committing excessively large raw logs.
+Files under `docs/evidence/` summarize important output for human review. Raw machine-generated logs and lifecycle artifacts are stored separately under [`evidence/`](../../evidence/README.md).
 
 ## Security rules
 

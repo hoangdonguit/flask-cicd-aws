@@ -340,9 +340,27 @@ Portfolio screenshots will be stored under:
 - [x] Add a manual GitHub Actions `workflow_dispatch` deployment workflow
 - [x] Verify deployment health remotely through public endpoints
 - [x] Demonstrate rollback using a previous immutable image tag
-- [ ] Capture final portfolio screenshots
-> All functional implementation phases are complete. Final portfolio screenshots remain a presentation-only task.
+- [x] Capture final portfolio screenshots
 
+
+## Portfolio Screenshots
+
+A compact visual walkthrough is available in
+[`docs/screenshots/`](docs/screenshots/README.md):
+
+- CI quality gates and pull-request verification;
+- immutable Docker image publication;
+- Terraform-provisioned EC2 runtime;
+- infrastructure pull-request checks;
+- GitHub Actions deployment and rollback through AWS Systems Manager.
+
+| Evidence | Screenshot |
+|---|---|
+| CI quality gates | [View](docs/screenshots/01-ci-quality-gates.png) |
+| Immutable image tags | [View](docs/screenshots/02-immutable-image-tags.png) |
+| Terraform EC2 runtime | [View](docs/screenshots/03-terraform-ec2-runtime.png) |
+| Terraform PR checks | [View](docs/screenshots/04-terraform-pr-checks.png) |
+| SSM deployment and rollback | [View](docs/screenshots/05-ssm-deployment-rollback.png) |
 
 ## Image Supply Chain
 

@@ -2,7 +2,7 @@
 
 A production-oriented DevOps portfolio lab for building, scanning, publishing and deploying a containerized Flask application to an ephemeral AWS EC2 environment.
 
-> **Current status:** Phase 3 is complete: the application is tested, security-scanned, and published to Docker Hub with immutable Git SHA tags. Terraform and AWS deployment remain under development.
+> **Current status:** Phase 4 is complete: automated quality gates, the secure image supply chain, and Terraform-based AWS EC2 provisioning have been verified. Automated deployment, health checks, and rollback remain under development.
 
 ## Recruiter Summary
 
@@ -308,6 +308,7 @@ Current evidence:
 - [Phase 1 — Local application and container hardening](docs/evidence/phase1-local-application-and-container.md)
 - [Phase 2 — Automated tests and CI quality gates](docs/evidence/phase2-ci-quality-gates.md)
 - [Phase 3 — Secure Docker image supply chain](docs/evidence/phase3-image-supply-chain.md)
+- [Phase 4 — Terraform EC2 provisioning](docs/evidence/phase4-terraform-ec2.md)
 
 Portfolio screenshots will be stored under:
 
@@ -330,7 +331,7 @@ Portfolio screenshots will be stored under:
 - [x] Add GitHub Actions CI quality gates
 - [x] Add Trivy image scanning
 - [x] Publish immutable `sha-<short-sha>` image tags
-- [ ] Provision AWS EC2 with Terraform
+- [x] Provision AWS EC2 with Terraform
 - [ ] Add repository-managed deployment scripts
 - [ ] Add a manual GitHub Actions deployment workflow
 - [ ] Verify deployment health remotely
@@ -435,4 +436,4 @@ The project does not currently claim:
 
 > Implemented an end-to-end CI/CD and IaC lab for a Dockerized Flask application on AWS EC2 using GitHub Actions, Docker Hub and Terraform, with automated tests, dependency and image scanning, immutable image tags, SSH-based deployment, post-deployment health checks and rollback using versioned Docker images.
 
-This bullet should only be used after the corresponding CI, Terraform, deployment and rollback evidence has been completed.
+CI, image supply chain, and Terraform provisioning evidence are complete. Use this full bullet only after automated deployment and rollback evidence has also been completed.

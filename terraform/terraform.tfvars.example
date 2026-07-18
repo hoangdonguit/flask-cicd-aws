@@ -1,0 +1,5 @@
+aws_region           = "us-east-1"
+instance_type        = "t3.micro"
+ssh_allowed_cidr     = "203.0.113.10/32"
+key_name             = "vockey"
+iam_instance_profile = "LabInstanceProfile"

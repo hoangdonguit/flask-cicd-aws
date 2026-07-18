@@ -1,0 +1,17 @@
+CapturedAtUTC=2026-07-18T13:47:10Z
+
+=== Outputs ===
+amazon_linux_ami_id = "ami-0fd6240f599091088"
+application_url = "http://32.192.209.173"
+instance_id = "i-0df673da1758aaca4"
+public_dns = "ec2-32-192-209-173.compute-1.amazonaws.com"
+public_ip = "32.192.209.173"
+selected_subnet_id = "subnet-025c958da87196336"
+ssh_command = "ssh -i /path/to/labsuser.pem ec2-user@32.192.209.173"
+
+=== State resources ===
+data.aws_ami.amazon_linux_2023
+data.aws_subnets.default
+data.aws_vpc.default
+aws_instance.app
+aws_security_group.app

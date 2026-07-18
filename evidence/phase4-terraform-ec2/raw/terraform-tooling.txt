@@ -1,0 +1,16 @@
+CapturedAtUTC=2026-07-18T13:47:07Z
+Terraform v1.15.8
+on linux_amd64
+
+
+Providers required by configuration:
+.
+└── provider[registry.terraform.io/hashicorp/aws] >= 5.0.0, < 7.0.0
+
+Providers required by state:
+
+    provider[registry.terraform.io/hashicorp/aws]
+
+
+[32m[1mSuccess![0m The configuration is valid.
+[0m

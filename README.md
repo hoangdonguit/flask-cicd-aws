@@ -336,11 +336,13 @@ Portfolio screenshots will be stored under:
 - [x] Deploy immutable Docker images through GitHub Actions and AWS SSM
 - [x] Verify automated rollback to a previous immutable image
 - [x] Destroy project infrastructure through Terraform
-- [ ] Add repository-managed deployment scripts
-- [ ] Add a manual GitHub Actions deployment workflow
-- [ ] Verify deployment health remotely
-- [ ] Demonstrate rollback using an older image tag
+- [x] Add repository-managed deployment and rollback scripts
+- [x] Add a manual GitHub Actions `workflow_dispatch` deployment workflow
+- [x] Verify deployment health remotely through public endpoints
+- [x] Demonstrate rollback using a previous immutable image tag
 - [ ] Capture final portfolio screenshots
+> All functional implementation phases are complete. Final portfolio screenshots remain a presentation-only task.
+
 
 ## Image Supply Chain
 
